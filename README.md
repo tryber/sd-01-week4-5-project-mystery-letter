@@ -11,7 +11,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone https://github.com/tryber/sd-01-week4-5-project-mystery-letter`.
+  * `git clone https://github.com/tryber/sd-01-week4-5-project-mystery-letter.git`.
 
 2. Crie uma branch a partir da branch `master`
   * Verifique que você está na branch `master`
