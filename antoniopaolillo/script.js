@@ -39,7 +39,7 @@ function gerarcartas() {
         buscandoimg();
         stylefonte();
     }
-
+    testando();
 }
 
 //gerando backgroundcolor
@@ -82,15 +82,10 @@ function stylefonte() {
 
 //alterando fontes mediante clique
 function testando(){
-var numeroCartas = document.getElementsByTagName('div')
+var numeroCartas = document.getElementsByClassName("cartas");
 let teste2 = numeroCartas.length;
-console.log(numeroCartas)
-console.log(teste2);
-
 for(let u = 0; u < teste2; u++){
-    var cartasMudando = document.getElementsByClassName("cartas")[u];
-    console.log(cartasMudando)
-    cartasMudando.addEventListener('click', function(){
+    numeroCartas[u].addEventListener('click', function(){
         corbackground();
         geracor();
         tamanhofonte();
@@ -99,4 +94,3 @@ for(let u = 0; u < teste2; u++){
     })
 }
 }
-testando();
