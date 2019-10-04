@@ -4,6 +4,19 @@
 
 
 
+function random_number(intervalo){
+    let num;
+    num=Math.floor(Math.random()*intervalo)
+    return num;
+}
+
+function create_div(){
+    let div;
+    div=document.createElement('div');
+    return div;
+}
+
+
 function split_frase(txt){
     let split_str=txt.split(" ");
     return split_str;
