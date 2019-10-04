@@ -3,10 +3,6 @@ var fonts = ["initial", "italic", "inherit", "normal", "oblique", "unset"]
 
 var cartaMisteriosa = document.getElementsByClassName("cartamisteriosa")[0];
 
-var textoDigitado = document.getElementById("inputtxt");
-var textoDigitadoValue = textoDigitado.value;
-var textoDigitadoSplit = textoDigitadoValue.split(" ");
-
 var simbolos = "0123456789ABCDEF";
 var colorBackground = "#";
 var colorBackground2 = "#";
@@ -14,6 +10,11 @@ var colorBackground2 = "#";
 var carta;
 
 function gerarcartas() {
+
+    var textoDigitado = document.getElementById("inputtxt");
+    var textoDigitadoValue = textoDigitado.value;
+    var textoDigitadoSplit = textoDigitadoValue.split(" ");
+
     var numCartas = document.getElementsByTagName('div');
     var numCartasLength = numCartas.length - 2;
 
@@ -80,19 +81,22 @@ function stylefonte() {
 }
 
 //alterando fontes mediante clique
-// var numeroCartas = document.getElementsByTagName('div')
-// let teste2 = numeroCartas.length;
-// console.log(numeroCartas)
-// console.log(teste2);
+function testando(){
+var numeroCartas = document.getElementsByTagName('div')
+let teste2 = numeroCartas.length;
+console.log(numeroCartas)
+console.log(teste2);
 
-// for(let u = 0; u < numCartasLength; u++){
-//     var cartasMudando = document.getElementsByClassName("cartas")[u];
-//     console.log(cartasMudando)
-//     cartasMudando.addEventListener('click', function(){
-//         corbackground();
-//         geracor();
-//         tamanhofonte();
-//         buscandoimg();
-//         stylefonte();
-//     })
-// }
+for(let u = 0; u < teste2; u++){
+    var cartasMudando = document.getElementsByClassName("cartas")[u];
+    console.log(cartasMudando)
+    cartasMudando.addEventListener('click', function(){
+        corbackground();
+        geracor();
+        tamanhofonte();
+        buscandoimg();
+        stylefonte();
+    })
+}
+}
+testando();
