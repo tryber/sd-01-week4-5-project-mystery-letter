@@ -2,7 +2,10 @@
 
 
 
-
+function return_btn_input(){
+    let btn_input=document.getElementById('btn_input')
+    return btn_input;
+}
 
 
 
