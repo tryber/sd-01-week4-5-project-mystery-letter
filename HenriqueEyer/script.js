@@ -1,24 +1,27 @@
-
+add_event_click_btn_input();
 
 function create_carta(frase){
+    
     let i;
-    for(i=0;i<frase.lenght;i++){
+    for(i=0;i<frase.length;i++){
         let div=create_div();
         put_attribute_fontColor_on_element(div);
         put_attribute_font_style_on_element(div);
         put_attribute_fontsize_on_element(div);
-        put_attribute_mgbackground_on_element(div)
-        add_element_in_div(element);
+        put_attribute_imgbackground_on_element(div)
+        add_element_in_div(div);
     }
 }
 
 function add_element_in_div(element){
-    let div=document.getElementById('div-output');
+    let div=document.getElementsByClassName('div-output')[0];
     div.appendChild(element);
 }
 
-function put_attribute_mgbackground_on_element(element){
-    element.style.backgroundImage=url("/img"+random_number(4)+".png");
+
+
+function put_attribute_imgbackground_on_element(element){
+    element.style.backgroundImage="url(/img"+random_number(4)+".png)";
 }
 
 function put_attribute_font_style_on_element(element){
@@ -52,16 +55,14 @@ function create_div(){
 }
 
 function split_frase(txt){
-    let split_str=txt.split(" ");
-    return split_str;
+    txt=txt.split(" ");
+    return txt;
 }
 
 
 function add_event_click_btn_input(){
     return_btn_input().addEventListener('click', function(){
-        //Chamar função para seperar o texto digitado em um vetor com cada palavra
-        //Chamar funçao para chamar as divs ou cria las
-        create_carta(split_frase(get_txt_input))
+        create_carta(split_frase(get_txt_input()));
     })
 }
 
@@ -72,6 +73,6 @@ function return_btn_input(){
 }
 
 function get_txt_input(){
-    let txt_input=document.getElementById('txt_input')
+    let txt_input=document.getElementById('txt_input');
     return txt_input.value;
 }
