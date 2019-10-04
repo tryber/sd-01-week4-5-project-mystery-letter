@@ -1,18 +1,20 @@
 add_event_click_btn_input();
 
-function create_carta(frase){
-    
+
+function create_carta(frase){ 
     let i;
-    for(i=0;i<frase.length;i++){
-        let div=create_div();
-        create_and_put_p_div(div,frase[i]);
-        put_attribute_fontColor_on_element(div);
-        put_attribute_font_style_on_element(div);
-        put_attribute_fontsize_on_element(div);
-        put_attribute_imgbackground_on_element(div)
-        put_attribute_class_on_element(div);
-        add_element_in_div(div);
-    }
+        delete_element(get_element_carta());
+        for(i=0;i<frase.length;i++){ 
+            let div=create_div();
+            create_and_put_txt_div(div,frase[i]);
+            put_attribute_fontColor_on_element(div);
+            put_attribute_font_style_on_element(div);
+            put_attribute_fontsize_on_element(div);
+            put_attribute_imgbackground_on_element(div)
+            put_attribute_class_on_element(div);
+            add_element_in_div(div);
+        }
+    
 }
 
 function get_element_carta(){
@@ -20,30 +22,19 @@ function get_element_carta(){
     return element;
 }
 
-function delete_all_cartas(){
-    let elements=get_element_carta();
+function delete_element(element){
     let i;
-    for(i=0;i<elements.length;i++){
-        get_father_element(elements[i]).removeChild(elements[i])
+    
+    if(element!=undefined){
+        let size_elements=element.length;
+        for(i=0;i<size_elements;i++){
+            element[0].parentNode.removeChild(element[0])
+        }
     }
 }
 
-
-function get_father_element(element){
-    return element.parentNode;
-}
-
-
-function delete_element(elements,elementFather){
-
-}
-
-
-
-function create_and_put_p_div(element,txt){
-    let p=document.createElement('p');
-    p.innerHTML=txt;
-    element.appendChild(p);
+function create_and_put_txt_div(element,txt){
+    element.innerHTML=txt;
 }
 
 function add_element_in_div(element){
@@ -95,7 +86,9 @@ function split_frase(txt){
 
 function add_event_click_btn_input(){
     return_btn_input().addEventListener('click', function(){
+        if(get_txt_input()!=""){
         create_carta(split_frase(get_txt_input()));
+        }
     })
 }
 
