@@ -6,6 +6,7 @@ function create_carta(frase){
     for(i=0;i<frase.length-1;i++){
         let div=create_div();
         create_and_put_p_div(div,frase[i]);
+        put_size_width_and_heigth(div);
         put_attribute_fontColor_on_element(div);
         put_attribute_font_style_on_element(div);
         put_attribute_fontsize_on_element(div);
@@ -14,6 +15,15 @@ function create_carta(frase){
         add_element_in_div(div);
     }
 }
+
+function put_size_width_and_heigth(element){
+    let width_div=random_number(4)*100;
+    let height_div=width_div/2;
+    element.style.width=width_div;
+    element.style.height=height_div;
+}
+
+
 
 function create_and_put_p_div(element,txt){
     let p=document.createElement('p');
