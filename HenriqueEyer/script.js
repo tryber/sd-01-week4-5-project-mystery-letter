@@ -1,8 +1,13 @@
 
 
 
-
-
+function put_atribute_fontsize_on_element(element){
+    let tamanho=random_number(50)
+    if(tamanho<10){
+        tamanho=10;
+    }
+    element.style.fontSize=tamanho;
+}
 
 function random_number(intervalo){
     let num;
@@ -15,7 +20,6 @@ function create_div(){
     div=document.createElement('div');
     return div;
 }
-
 
 function split_frase(txt){
     let split_str=txt.split(" ");
