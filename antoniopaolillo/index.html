@@ -12,12 +12,12 @@
 
 </head>
 
-<body>
+<body onload="gerarcartas()">
     <main>
         <div class="input">
             <p>Digite o texto a ser embaralhado pelas cartas magicas:</p>
-            <input type="text" id="inputtxt">
-            <button class="botaogerador" onclick="teste()">Gerar carta!</button>
+            <input type="text" id="inputtxt" value="essa é minha carta misteriosa !">
+            <button class="botaogerador" onclick="gerarcartas()">Gerar carta!</button>
         </div>
         
         <div class="cartamisteriosa"></div>
