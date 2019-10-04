@@ -3,10 +3,9 @@ add_event_click_btn_input();
 function create_carta(frase){
     
     let i;
-    for(i=0;i<frase.length-1;i++){
+    for(i=0;i<frase.length;i++){
         let div=create_div();
         create_and_put_p_div(div,frase[i]);
-        put_size_width_and_heigth(div);
         put_attribute_fontColor_on_element(div);
         put_attribute_font_style_on_element(div);
         put_attribute_fontsize_on_element(div);
@@ -16,11 +15,27 @@ function create_carta(frase){
     }
 }
 
-function put_size_width_and_heigth(element){
-    let width_div=random_number(4)*100;
-    let height_div=width_div/2;
-    element.style.width=width_div;
-    element.style.height=height_div;
+function get_element_carta(){
+    let element=document.getElementsByClassName('divcartas');
+    return element;
+}
+
+function delete_all_cartas(){
+    let elements=get_element_carta();
+    let i;
+    for(i=0;i<elements.length;i++){
+        get_father_element(elements[i]).removeChild(elements[i])
+    }
+}
+
+
+function get_father_element(element){
+    return element.parentNode;
+}
+
+
+function delete_element(elements,elementFather){
+
 }
 
 
@@ -55,10 +70,8 @@ function put_attribute_fontColor_on_element(element){
 }
 
 function put_attribute_fontsize_on_element(element){
-    let tamanho=random_number(50)
-    if(tamanho<10){
-        tamanho=10;
-    }
+    let tamanho=(2+random_number(6))*10
+    
     element.style.fontSize=tamanho;
 }
 
