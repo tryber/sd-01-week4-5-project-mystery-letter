@@ -9,3 +9,8 @@
     width: 100%;
     height: 400px;
 }
+
+.divcartas{
+    display: flex;
+    align-items: center;
+}

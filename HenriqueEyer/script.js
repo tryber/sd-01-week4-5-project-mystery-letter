@@ -3,14 +3,22 @@ add_event_click_btn_input();
 function create_carta(frase){
     
     let i;
-    for(i=0;i<frase.length;i++){
+    for(i=0;i<frase.length-1;i++){
         let div=create_div();
+        create_and_put_p_div(div,frase[i]);
         put_attribute_fontColor_on_element(div);
         put_attribute_font_style_on_element(div);
         put_attribute_fontsize_on_element(div);
         put_attribute_imgbackground_on_element(div)
+        put_attribute_class_on_element(div);
         add_element_in_div(div);
     }
+}
+
+function create_and_put_p_div(element,txt){
+    let p=document.createElement('p');
+    p.innerHTML=txt;
+    element.appendChild(p);
 }
 
 function add_element_in_div(element){
@@ -18,7 +26,9 @@ function add_element_in_div(element){
     div.appendChild(element);
 }
 
-
+function put_attribute_class_on_element(element){
+    element.className="divcartas";
+}
 
 function put_attribute_imgbackground_on_element(element){
     element.style.backgroundImage="url(/img"+random_number(4)+".png)";
