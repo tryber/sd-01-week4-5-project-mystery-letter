@@ -37,42 +37,42 @@ function gerarcartas() {
         buscandoimg();
         stylefonte();
     }
-
-        function corbackground(){
-        //gerando backgroundcolor
-        for (let n = 0; n < 6; n++) {
-            let simboloSorteado = simbolos[Math.floor(Math.random() * 16)];
-            colorBackground = colorBackground + simboloSorteado;
-        }
-        carta.style.backgroundColor = colorBackground;
-        colorBackground = "#";
-    }   
-        function geracor(){
-        //gerando cor da fonte
-        for (let n = 0; n < 6; n++) {
-            let simboloSorteado2 = simbolos[Math.floor(Math.random() * 16)];
-            colorBackground2 = colorBackground2 + simboloSorteado2;
-        }
-        carta.style.color = colorBackground2;
-        colorBackground2 = "#";
-    }
-        //gerando tamanho da fonte
-        function tamanhofonte(){
-        var tamanhoFonte = Math.floor(Math.random() * (70 - 20) + 20);
-        carta.style.fontSize = tamanhoFonte + 'px';
-        }
-
-        function buscandoimg(){
-        //buscando background img
-        let sorteioImagem = Math.floor(Math.random() * 4);
-        carta.style.backgroundImage = "url('img"+[sorteioImagem]+".png')"
-        }
-        
-        function stylefonte(){
-        //gerando style da fonte
-        let sorteioStyle = Math.floor(Math.random() * 6);
-        carta.style.fontStyle = fonts[sorteioStyle];
-        }
-
-
 }
+
+
+    
+    function corbackground(){
+    //gerando backgroundcolor
+    for (let n = 0; n < 6; n++) {
+        let simboloSorteado = simbolos[Math.floor(Math.random() * 16)];
+        colorBackground = colorBackground + simboloSorteado;
+    }
+    carta.style.backgroundColor = colorBackground;
+    colorBackground = "#";
+}   
+    function geracor(){
+    //gerando cor da fonte
+    for (let n = 0; n < 6; n++) {
+        let simboloSorteado2 = simbolos[Math.floor(Math.random() * 16)];
+        colorBackground2 = colorBackground2 + simboloSorteado2;
+    }
+    carta.style.color = colorBackground2;
+    colorBackground2 = "#";
+}
+    //gerando tamanho da fonte
+    function tamanhofonte(){
+    var tamanhoFonte = Math.floor(Math.random() * (70 - 20) + 20);
+    carta.style.fontSize = tamanhoFonte + 'px';
+    }
+
+    function buscandoimg(){
+    //buscando background img
+    let sorteioImagem = Math.floor(Math.random() * 4);
+    carta.style.backgroundImage = "url('img"+[sorteioImagem]+".png')"
+    }
+    
+    function stylefonte(){
+    //gerando style da fonte
+    let sorteioStyle = Math.floor(Math.random() * 6);
+    carta.style.fontStyle = fonts[sorteioStyle];
+    }
