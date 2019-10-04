@@ -1,6 +1,19 @@
 
 
 
+
+
+
+function put_atribute_font_style_on_element(element){
+    let styles=['italic','normal','oblique'];
+    element.style.fontStyle=styles[random_number(3)];
+}
+
+
+function put_atribute_fontColor_on_element(element){
+    element.style.color="rgb("+random_number(255)+","+random_number(255)+","+random_number(255)+")";
+}
+
 function put_atribute_fontsize_on_element(element){
     let tamanho=random_number(50)
     if(tamanho<10){
