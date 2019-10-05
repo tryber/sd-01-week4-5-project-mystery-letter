@@ -1,19 +1,38 @@
 add_event_click_btn_input();
+txt_inicial()
+
+function txt_inicial(){
+    get_txt_input().value="Digite algo para ficar igual a mim !!"
+    create_carta(split_frase(get_txt_input().value));
+}
+
+
+function add_event_click_div_carta(element){
+    element.addEventListener('click', function(){    
+        put_attribute_fontColor_on_element(this);
+        put_attribute_font_style_on_element(this);
+        put_attribute_fontsize_on_element(this);
+        put_attribute_imgbackground_on_element(this)
+        put_attribute_class_on_element(this);
+    })
+}
+
 
 
 function create_carta(frase){ 
     let i;
-        delete_element(get_element_carta());
-        for(i=0;i<frase.length;i++){ 
-            let div=create_div();
-            create_and_put_txt_div(div,frase[i]);
-            put_attribute_fontColor_on_element(div);
-            put_attribute_font_style_on_element(div);
-            put_attribute_fontsize_on_element(div);
-            put_attribute_imgbackground_on_element(div)
-            put_attribute_class_on_element(div);
-            add_element_in_div(div);
-        }
+    delete_element(get_element_carta());
+    for(i=0;i<frase.length;i++){ 
+        let div=create_div();
+        create_and_put_txt_div(div,frase[i]);
+        put_attribute_fontColor_on_element(div);
+        put_attribute_font_style_on_element(div);
+        put_attribute_fontsize_on_element(div);
+        put_attribute_imgbackground_on_element(div)
+        put_attribute_class_on_element(div);
+        add_event_click_div_carta(div);
+        add_element_in_div(div);
+    }
     
 }
 
@@ -86,8 +105,8 @@ function split_frase(txt){
 
 function add_event_click_btn_input(){
     return_btn_input().addEventListener('click', function(){
-        if(get_txt_input()!=""){
-        create_carta(split_frase(get_txt_input()));
+        if(get_txt_input().value!=""){
+            create_carta(split_frase(get_txt_input().value));
         }
     })
 }
@@ -100,5 +119,5 @@ function return_btn_input(){
 
 function get_txt_input(){
     let txt_input=document.getElementById('txt_input');
-    return txt_input.value;
+    return txt_input
 }
