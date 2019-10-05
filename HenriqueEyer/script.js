@@ -1,9 +1,11 @@
 add_event_click_btn_input();
 txt_inicial()
 
+
 function txt_inicial(){
     get_txt_input().value="Digite algo para ficar igual a mim !!"
     create_carta(split_frase(get_txt_input().value));
+    put_number_element_cont_word(split_frase(get_txt_input().value).length);
 }
 
 
@@ -32,6 +34,7 @@ function create_carta(frase){
         put_attribute_class_on_element(div);
         add_event_click_div_carta(div);
         add_element_in_div(div);
+        put_number_element_cont_word(get_element_carta().length);
     }
     
 }
@@ -123,3 +126,11 @@ function get_txt_input(){
     let txt_input=document.getElementById('txt_input');
     return txt_input
 }
+
+function get_element_cont_word(){
+    return document.getElementsByClassName('cont_word')[0];
+}
+
+function put_number_element_cont_word(word_count){
+    get_element_cont_word().innerText=+word_count;
+} 
