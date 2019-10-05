@@ -6,17 +6,17 @@ var cartaMisteriosa = document.getElementsByClassName("cartamisteriosa")[0];
 var simbolos = "0123456789ABCDEF";
 var colorBackground = "#";
 var colorBackground2 = "#";
-
 var carta;
 
-function gerarcartas() {
+
+function gerarCartas() {
 
     var textoDigitado = document.getElementById("inputtxt");
     var textoDigitadoValue = textoDigitado.value;
     var textoDigitadoSplit = textoDigitadoValue.split(" ");
 
     var numCartas = document.getElementsByTagName('div');
-    var numCartasLength = numCartas.length - 2;
+    var numCartasLength = numCartas.length - 3;
 
     //apagando cartas anteriores
     for (let j = 0; j < numCartasLength; j++) {
@@ -33,17 +33,25 @@ function gerarcartas() {
         //adicionando fonte por indice às cartas
         var texto = textoDigitadoSplit[i];
         carta.innerHTML = texto;
-        corbackground();
-        geracor();
-        tamanhofonte();
-        buscandoimg();
-        stylefonte();
+        corBackground(carta);
+        geraCor(carta);
+        tamanhoFonte(carta);
+        buscandoImg(carta);
+        styleFonte(carta);
     }
-    testando();
+    //alterando a div mediante clique
+    alteraFonte();
+
+    let numeroCartas = document.getElementsByClassName("cartas");
+    let numeroCartasLength = numeroCartas.length;
+    let divCartas = document.getElementsByClassName("numerodecartas")[0];
+    divCartas.innerHTML = "Quantidade da cartas misteriosas: " + numeroCartasLength;
+
+
 }
 
 //gerando backgroundcolor
-function corbackground() {
+function corBackground(carta) {
     for (let n = 0; n < 6; n++) {
         let simboloSorteado = simbolos[Math.floor(Math.random() * 16)];
         colorBackground = colorBackground + simboloSorteado;
@@ -53,7 +61,7 @@ function corbackground() {
 }
 
 //gerando cor da fonte
-function geracor() {
+function geraCor(carta) {
     for (let n = 0; n < 6; n++) {
         let simboloSorteado2 = simbolos[Math.floor(Math.random() * 16)];
         colorBackground2 = colorBackground2 + simboloSorteado2;
@@ -63,34 +71,34 @@ function geracor() {
 }
 
 //gerando tamanho da fonte
-function tamanhofonte() {
+function tamanhoFonte(carta) {
     var tamanhoFonte = Math.floor(Math.random() * (70 - 20) + 20);
     carta.style.fontSize = tamanhoFonte + 'px';
 }
 
 //buscando background img
-function buscandoimg() {
+function buscandoImg(carta) {
     let sorteioImagem = Math.floor(Math.random() * 4);
     carta.style.backgroundImage = "url('img" + [sorteioImagem] + ".png')"
 }
 
 //gerando style da fonte
-function stylefonte() {
+function styleFonte(carta) {
     let sorteioStyle = Math.floor(Math.random() * 6);
     carta.style.fontStyle = fonts[sorteioStyle];
 }
 
 //alterando fontes mediante clique
-function testando(){
-var numeroCartas = document.getElementsByClassName("cartas");
-let teste2 = numeroCartas.length;
-for(let u = 0; u < teste2; u++){
+function alteraFonte(){
+let numeroCartas = document.getElementsByClassName("cartas");
+let numeroCartasLength = numeroCartas.length;
+for(let u = 0; u < numeroCartasLength; u++){
     numeroCartas[u].addEventListener('click', function(){
-        corbackground();
-        geracor();
-        tamanhofonte();
-        buscandoimg();
-        stylefonte();
+        corBackground(numeroCartas[u]);
+        geraCor(numeroCartas[u]);
+        tamanhoFonte(numeroCartas[u]);
+        buscandoImg(numeroCartas[u]);
+        styleFonte(numeroCartas[u]);
     })
 }
 }
