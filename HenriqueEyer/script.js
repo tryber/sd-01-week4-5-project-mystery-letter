@@ -107,6 +107,8 @@ function add_event_click_btn_input(){
     return_btn_input().addEventListener('click', function(){
         if(get_txt_input().value!=""){
             create_carta(split_frase(get_txt_input().value));
+        }else{
+            delete_element(get_element_carta());
         }
     })
 }
