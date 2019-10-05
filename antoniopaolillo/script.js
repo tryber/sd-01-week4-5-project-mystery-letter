@@ -33,6 +33,8 @@ function gerarCartas() {
         //adicionando fonte por indice às cartas
         var texto = textoDigitadoSplit[i];
         carta.innerHTML = texto;
+        
+        //chamando funções que vão modificar a div cartas
         corBackground(carta);
         geraCor(carta);
         tamanhoFonte(carta);
@@ -42,6 +44,7 @@ function gerarCartas() {
     //alterando a div mediante clique
     alteraFonte();
 
+    //mostrando na tela o numero de palavras
     let numeroCartas = document.getElementsByClassName("cartas");
     let numeroCartasLength = numeroCartas.length;
     let divCartas = document.getElementsByClassName("numerodecartas")[0];
