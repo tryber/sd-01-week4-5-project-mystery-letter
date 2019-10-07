@@ -38,3 +38,8 @@ div {
     left: 50%;
     transform: translate(-50%);
 }
+
+/*Classes de estilo aleatorio*/
+.underlined{ text-decoration: underline solid white}
+.overlined{ text-decoration: overline solid white}
+.italic{font-style: italic}

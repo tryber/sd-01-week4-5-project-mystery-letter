@@ -30,9 +30,23 @@ function randomSize() {
             randomRGB2 = Math.floor((Math.random()*255))+1,
             randomRGB3 = Math.floor((Math.random()*255))+1;
             wordSpan.style.backgroundColor="rgb("+randomRGB1+","+randomRGB2+","+randomRGB3+")";     
-            letterContainer.appendChild(wordSpan);
         }
         randomColor()
+
+        function randomStyle() {
+            var stylesObj = {
+                0: "underlined",
+                1: "overlined",
+                2: "italic"
+            };
+                for (random in stylesObj){
+                    random = Math.floor(Math.random()*3);
+                    wordSpan.className+=" "+stylesObj[random];
+                    letterContainer.appendChild(wordSpan);
+                }
+            }
+            randomStyle();
     }
 }
 
+//Aleatório: negrito, italico, etc
