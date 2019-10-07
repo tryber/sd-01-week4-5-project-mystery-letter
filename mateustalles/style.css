@@ -7,6 +7,13 @@ div {
     cursor: default;
 }
 
+h1 {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
 .active,.active-hover {
     outline: 2px solid white;
 }
@@ -18,8 +25,8 @@ div {
     left: 50%;
     top: 50%;
     width: 65%;
-    height: auto;
-    padding: 20px 35px;
+    height: 95%;
+    padding: 5px 35px;
     text-align: center;
     transform: translate(-50%,-50%);
     background-color:white;
@@ -32,10 +39,28 @@ div {
     border: 1px solid black;
 }
 
-.container-result {
-    position: relative;
-   margin-top: 50px;
+.input-container {
+    position: absolute;
+    height: 400px;
+    left: 50%;
+    transform: translate(-50%);
 }
+
+.container-result {
+    position: absolute;
+    height:50%;
+    bottom: 5px;
+    overflow: auto;
+}
+/*Classe da div temporária*/
+.temp-div {
+    position: fixed;
+    background-color: black;
+    width: 100px;
+    height: 100px;
+    z-index: 5;
+}
+
 
 /*Classes de estilo aleatorio*/
 .underlined{ text-decoration: underline solid white}

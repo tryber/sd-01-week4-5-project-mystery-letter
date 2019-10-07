@@ -1,4 +1,4 @@
-//Carta inicial
+//Carta inicial - Bonus 1
 let input = document.querySelector(".input-letter");
 function coringaRi() {
     letterContainer = document.querySelector(".container-result");
@@ -71,4 +71,23 @@ function randomSize() {
     }
 }
 
-
+//Bonos 2 -  Menu de classes
+function classMenu() {
+    let element = document.getElementsByClassName("current-word");
+    for (each of element) {
+        each.addEventListener("click", function(e) {
+            let tempDiv = document.createElement("div");
+            tempDiv.className="temp-div";
+            tempDiv.style="top:"+ e.pageY + "px";            
+            tempDiv.style="left:"+e.pageX + "px";
+            this.appendChild(tempDiv);
+        });
+    }
+    if (document.querySelector("temp-div")!== null) {
+        let allTempDivs = document.querySelector("temp-div");
+        allTempDivs.addEventListener("mouseleave", function() {
+            this.remove();
+        });
+    }
+}
+classMenu();
