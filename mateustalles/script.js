@@ -5,7 +5,7 @@ input.addEventListener("change", function() {
     letterContainer = document.querySelector(".container-result");
     stringFormation();
     randomSize();
-    
+    //randomColor();
 });
 
 //formação de array de palavras
@@ -18,11 +18,21 @@ function stringFormation () {
 
 function randomSize() {
     for (let word of stringArray[0]) {
-        let wordSpan = document.createElement("span");
+        wordSpan = document.createElement("span");
         let randomSize = ((Math.random()*3)+1);
         wordSpan.style.fontSize=randomSize+"em";
         wordSpan.innerHTML=word+" ";
+        wordSpan.className="current-word"
         console.log(wordSpan)
-        letterContainer.appendChild(wordSpan);
+        //Cor aleatoria
+        function randomColor() {
+            let randomRGB1 = Math.floor((Math.random()*255))+1,
+            randomRGB2 = Math.floor((Math.random()*255))+1,
+            randomRGB3 = Math.floor((Math.random()*255))+1;
+            wordSpan.style.backgroundColor="rgb("+randomRGB1+","+randomRGB2+","+randomRGB3+")";     
+            letterContainer.appendChild(wordSpan);
+        }
+        randomColor()
     }
 }
+
