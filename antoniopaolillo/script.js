@@ -30,10 +30,10 @@ function gerarCartas() {
         carta.setAttribute("class", "cartas");
         cartaMisteriosa.appendChild(carta);
 
-        //adicionando fonte por indice às cartas
+        //adicionando texto por indice às cartas
         var texto = textoDigitadoSplit[i];
         carta.innerHTML = texto;
-        
+
         //chamando funções que vão modificar a div cartas
         corBackground(carta);
         geraCor(carta);
@@ -92,16 +92,16 @@ function styleFonte(carta) {
 }
 
 //alterando fontes mediante clique
-function alteraFonte(){
-let numeroCartas = document.getElementsByClassName("cartas");
-let numeroCartasLength = numeroCartas.length;
-for(let u = 0; u < numeroCartasLength; u++){
-    numeroCartas[u].addEventListener('click', function(){
-        corBackground(numeroCartas[u]);
-        geraCor(numeroCartas[u]);
-        tamanhoFonte(numeroCartas[u]);
-        buscandoImg(numeroCartas[u]);
-        styleFonte(numeroCartas[u]);
-    })
-}
+function alteraFonte() {
+    let numeroCartas = document.getElementsByClassName("cartas");
+    let numeroCartasLength = numeroCartas.length;
+    for (let u = 0; u < numeroCartasLength; u++) {
+        numeroCartas[u].addEventListener('click', function () {
+            corBackground(numeroCartas[u]);
+            geraCor(numeroCartas[u]);
+            tamanhoFonte(numeroCartas[u]);
+            buscandoImg(numeroCartas[u]);
+            styleFonte(numeroCartas[u]);
+        })
+    }
 }
