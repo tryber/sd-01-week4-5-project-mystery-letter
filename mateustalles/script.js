@@ -3,9 +3,9 @@
 let input = document.querySelector(".input-letter");
 input.addEventListener("change", function() {
     letterContainer = document.querySelector(".container-result");
-    letterContainer.innerHTML=input.value;
     stringFormation();
-    console.log(stringArray);
+    randomSize();
+    
 });
 
 //formação de array de palavras
@@ -17,6 +17,12 @@ function stringFormation () {
 //função tamanho de letra aleatório
 
 function randomSize() {
-    let randomSize = (Math.random()*3)
-    letterContainer.style.fontSize=randomSize+"em";
+    for (let word of stringArray[0]) {
+        let wordSpan = document.createElement("span");
+        let randomSize = ((Math.random()*3)+1);
+        wordSpan.style.fontSize=randomSize+"em";
+        wordSpan.innerHTML=word+" ";
+        console.log(wordSpan)
+        letterContainer.appendChild(wordSpan);
+    }
 }
