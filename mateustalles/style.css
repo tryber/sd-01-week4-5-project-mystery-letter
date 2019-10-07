@@ -29,6 +29,12 @@ div {
 }
 
 .input-letter {
-    width:70%;
     border: 1px solid black;
+}
+
+.container-result {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
 }
