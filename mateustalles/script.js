@@ -1,8 +1,19 @@
+//Carta inicial
+let input = document.querySelector(".input-letter");
+function coringaRi() {
+    letterContainer = document.querySelector(".container-result");
+    let placeholder = input.placeholder;
+    stringArray = [];
+    stringArray.push(placeholder.toString().split(" "));
+    console.log(stringArray);
+    randomSize();
+}
+coringaRi();
+
 //função gera texto em div a partir do input.
 
-let input = document.querySelector(".input-letter");
+
 input.addEventListener("change", function() {
-    letterContainer = document.querySelector(".container-result");
     stringFormation();
     randomSize();
     //randomColor();
