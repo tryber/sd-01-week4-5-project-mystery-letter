@@ -117,7 +117,19 @@ fontSizeDropdown.addEventListener("blur", function() {
     divWord.style.fontSize=this.value+"em";
 });
 
-//Como por algum motivo bizar
+//Como por algum motivo bizarro não consegui usar a paleta de cores do HTML, vou imbutir uma em
+//javaScript que achei na net.
+
+var picker = new CP(document.querySelector(".color-picker"));
+var target = document.querySelector(".color-picker");
+target.addEventListener("click", function() {
+    picker.on("drag", function(color) {
+        target.value = '#' + color;
+        console.log(target.value);
+    });
+});
+    
+
 function reset() {
     letterContainer.remove();
     let newLetterContainer = document.createElement("div");

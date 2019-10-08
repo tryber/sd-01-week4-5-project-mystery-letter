@@ -32,7 +32,7 @@ h1 {
     background-color:white;
     color: black;
     border: 2px double black;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .input-letter {
@@ -53,11 +53,10 @@ h1 {
     width: 95%;
     height: 70%;
     transform: translate(-50%, -50%);
-    overflow: scroll;
 }
 .temp-div {
     width: 200px;
-    height: 200px;
+    height: auto;
     font-style: none;
     text-shadow: none;
     font-weight: none;
@@ -68,6 +67,7 @@ h1 {
     background-color: black;
     position: relative;
     display: none;
+
 }
 
 .btn-close {
@@ -110,3 +110,9 @@ h1 {
 .rough {background-image:url(images/mystery-letter-rough-paper.png)}
 
 .dropdown-menu {width:120px;}
+.form {overflow: auto; width: 150px;}
+
+.color-picker {
+    position: fixed;
+    width: 100px;
+}
