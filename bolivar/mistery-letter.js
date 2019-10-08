@@ -1,7 +1,6 @@
 function separeStrings(){
     var inputtext = document.getElementById("main-input").value
     var arraytext = inputtext.split(" ")
-    console.log(arraytext)
     return arraytext
 }
 
@@ -28,9 +27,17 @@ function tableSize(){
         collum.innerHTML = array[i]
         select.appendChild(collum);
     }
+    fontSize();
 }
 
 function randomNumber(limit){
-    var num = Math.floor(Math.random() * limit);
+    var num = Math.floor(Math.random() * limit) + 20;
     return num
+}
+
+function fontSize(){
+    for (i = 0; i < document.getElementById("main-table-body").childElementCount; i++){
+        var collum = document.getElementById("collum" + i)
+        collum.style.fontSize = randomNumber(70) + "px"
+    }
 }
