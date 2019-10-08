@@ -61,9 +61,13 @@ function randomSize() {
                 10: "flaming",
                 11: "comic",
                 12: "vegas",
-                13: "deep"
+                13: "deep",
+                14: "canvas",
+                15: "printout",
+                16: "pink",
+                17: "rough"
             };
-                random = Math.floor(Math.random()*14);
+                random = Math.floor(Math.random()*18);
                 wordSpan.className+=" "+stylesObj[random];
                 letterContainer.appendChild(wordSpan);
         }
