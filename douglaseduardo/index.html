@@ -10,18 +10,22 @@
         text-align: center;
         
     }
+
     form{
         width: 100vw;
         display: flex;  
         justify-content: center;
         align-items: center
     }
+
     #caixaTexto{
         width: 500px;
         height: 20px;
         
     }
+
     .cartas{
+        margin: 1%;
         background-size:100% 100%;
         -webkit-background-size: 100% 100%;
         -o-background-size: 100% 100%;
@@ -36,11 +40,10 @@
         Carta Misteriosa→<input type="text" name="carta" id="caixaTexto">
         <button type="button" onclick="myFunction()">Criar Carta</button>
     </form>
-    
-    <h2 id="frase">teste </h2>
 
     <div id="cartaMisteriosa"></div>
 
+    <button type="button" onclick="restartarPagina()">reset</button>
 
     <script>
     let caixaTexto = document.getElementById("caixaTexto")
@@ -103,8 +106,10 @@
             adicionarElemento(i)
         }
     }
-        
 
+    function restartarPagina(){
+        window.history.go(0)
+    } 
 
     </script>
 </body>
