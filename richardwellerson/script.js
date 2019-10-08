@@ -1,3 +1,5 @@
-textUser = document.getElementsByTagName("textarea").value
+function capturarTexto() {
+    textUser = document.getElementsByClassName("jscaptura").value
+    console.log(textUser)
+  }
 
-console.log(textUser)
