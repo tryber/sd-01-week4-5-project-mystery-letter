@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carta misteriosa</title>
+    <style>
+    body {
+        text-align: center;
+    }
+    form{
+        width: 100vw;
+        display: flex;  
+        justify-content: center;
+        align-items: center
+    }
+    #caixaTexto{
+        width: 500px;
+    }
+    </style>
+</head>
+<body>
+    <form>
+        Carta Misteriosa→<input type="text" name="carta" id="caixaTexto">
+        <button onclick="myFunction()">Criar Carta</button>
+    </form>
+    
+    <h3 id="frase">teste
+
+
+
+
+    </h3>
+    <script>
+    //variaveis
+    let caixaTexto = document.getElementById("caixaTexto")
+    let frase = document.getElementById("frase")
+    //funções
+    function myFunction() {
+        frase.innerHTML = caixaTexto.value
+}
+
+    </script>
+</body>
+</html>
