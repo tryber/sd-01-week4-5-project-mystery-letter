@@ -11,8 +11,6 @@ function coringaRi() {
 coringaRi();
 
 //função gera texto em div a partir do input.
-
-
 letterInput.addEventListener("change", function() {
     reset();
     stringFormation();
@@ -87,43 +85,39 @@ function classMenu() {
         each.addEventListener("click", function() { 
                 tempDiv.style.display="inline-block";
                 this.appendChild(tempDiv);
-            });
-        }
-        //Funcionalidade selecionar stilo:
-        let styleDropdown = document.querySelector(".dropdown-style");
-            styleDropdown.addEventListener("change", function() {
-                let divWord = (styleDropdown.parentNode).parentNode;
-                divWord.className=this.value;
-                
-        })
-
-        //Funcionalidade tamanho da fonte
-
-    let fontSizeDropdown = document.querySelector(".dropdown-font-size")
-    let i = 1.0;
-    for (; i<=4.1 ; i+=0.1) {
-        let newFontElement = document.createElement("option");
-        newFontElement.value= i.toFixed(2);
-        newFontElement.class= i.toFixed(2);
-        newFontElement.innerHTML= i.toFixed(2);
-        fontSizeDropdown.appendChild(newFontElement);
+        });
     }
-    fontSizeDropdown.addEventListener("change", function() {
-        let divWord = fontSizeDropdown.parentNode.parentNode.parentNode;
-        console.log(divWord);
-        divWord.style.fontSize="";
-        divWord.style.fontSize=this.value+"em";
-    });
 }
 
+ 
 classMenu();
 
-//botão fechar
-//let btnClose = document.querySelector(".btn-close")
-//btnClose.addEventListener("click", function() {
-//    this.parentElement.remove();
-//});
-//função reset
+//Funcionalidade selecionar stilo:
+let styleDropdown = document.querySelector(".dropdown-style");
+styleDropdown.addEventListener("blur", function() {
+    let divWord = (styleDropdown.parentNode).parentNode;
+    divWord.className=this.value;
+})
+
+//Funcionalidade tamanho da fonte
+
+let fontSizeDropdown = document.querySelector(".dropdown-font-size")
+let i = 1.0;
+for (; i<=4.1 ; i+=0.1) {
+    let newFontElement = document.createElement("option");
+    newFontElement.value= i.toFixed(2);
+    newFontElement.class= i.toFixed(2);
+    newFontElement.innerHTML= i.toFixed(2);
+    fontSizeDropdown.appendChild(newFontElement);
+}
+fontSizeDropdown.addEventListener("blur", function() {
+    let divWord = fontSizeDropdown.parentNode.parentNode;
+    console.log(divWord);
+    divWord.style.fontSize="";
+    divWord.style.fontSize=this.value+"em";
+});
+
+//Como por algum motivo bizar
 function reset() {
     letterContainer.remove();
     let newLetterContainer = document.createElement("div");
