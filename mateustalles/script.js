@@ -77,23 +77,32 @@ function randomSize() {
 
 //Bonos 2 -  Menu de classes
 function classMenu() {
-    let element = document.getElementsByClassName("current-word");
-    for (each of element) {
-        each.addEventListener("click", function(e) {
-            let tempDiv = document.createElement("div");
-            tempDiv.className="temp-div";
-            tempDiv.style="top:"+ e.pageY + "px";            
-            tempDiv.style="left:"+e.pageX + "px";
-            this.appendChild(tempDiv);
-        });
-    }
-    if (document.querySelector("temp-div")!== null) {
-        let allTempDivs = document.querySelector("temp-div");
-        allTempDivs.addEventListener("mouseleave", function() {
-            this.remove();
-        });
-    }
+    let currentWords = document.querySelectorAll(".current-word");   
+    let tempDiv = document.querySelector(".temp-div")
+
+    tempDiv.addEventListener("mouseleave", function() {
+        this.remove();
+    });
+
+    for (each of currentWords) {
+        each.addEventListener("click", function() { 
+                tempDiv.className="temp-div";
+                this.appendChild(tempDiv);
+                tempDiv.style="";
+                tempDiv.style.left=0+"px";
+                tempDiv.style.top=0+"px";
+                tempDiv.style.visibility="visible";
+            });
+        
+        }
+        //Adiciona funcionalidade aos clicks:
+        let styleDropdown = document.querySelector(".dropdown-style");
+            styleDropdown.addEventListener("change", function() {
+                let divWord = this.parentNode.parentNode;
+                divWord.className=this.value;
+    })
 }
+
 classMenu();
 
 //função reset
