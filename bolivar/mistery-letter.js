@@ -72,10 +72,10 @@ function countWords(array){
         characters += array[i]
     }
     if (characters.length == 1){
-        document.getElementById("count-words").innerText = characters.length + " word"
+        document.getElementById("count-words").innerHTML = characters.length + " word"
     }
     else{
-        document.getElementById("count-words").innerText = characters.length + " words"
+        document.getElementById("count-words").innerHTML = characters.length + " words"
     }
 }
 

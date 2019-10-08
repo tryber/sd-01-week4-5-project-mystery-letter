@@ -6,14 +6,16 @@
         <link href="mistery-letter.css" rel="stylesheet" type="text/css" media="all">
     </head>
     <body>
-        <h1 id="main-title">Mistery Letter</h1>
+        <h1 id="main-title"> <span>Mistery Letter</span></h1>
         <input id="main-input" maxLength = "50" type="text" >
-        <button type="submit" onclick="tableSize()">TEST</button>
-        <p id="count-words">0 Words</p>
+        <button id="button" type="submit" onclick="tableSize()">Mistery Card!!!</button>
+        <p><span id="count-words">0 Words</span></p>
+        <div id="div">
         <table id="main-table">
             <tbody id="main-table-body">
             </tbody>
         </table>
+        </div>
         
     </body>
     <script src="mistery-letter.js"></script>
