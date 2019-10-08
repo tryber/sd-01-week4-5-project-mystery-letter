@@ -19,6 +19,7 @@ function removeBlanks(){
 }
 
 function tableSize(){
+    clean()
     var array = removeBlanks();
     var select = document.getElementById("main-table-body");
     for (i = 0; i < array.length; i++){
@@ -106,6 +107,18 @@ function initialText(){
     document.getElementById("main-input").value = "Boys only want love if it's torture"
 }
 
+function bodyCollor(){
+    document.body.style.backgroundColor = 'rgb(' + randomNumber(255,1) + ',' + randomNumber(255,1) + ',' + randomNumber(255,1) + ')'
+}
+
+function clean(){
+    var limit = document.getElementById("main-table-body").childElementCount
+    for (i = 0; i < limit; i++){
+    document.getElementById("main-table-body").removeChild(document.getElementById("collum" + i))
+    }
+}
+
 window.onload = function () {
     initialText()
+    bodyCollor()
 } 

@@ -1,7 +1,11 @@
 #main-table-body{
-    border-spacing: 50px;
+    border-spacing: 2px;
 }
 .collum{
     width: 150px;
     height: 100px;
+    margin: 5px 5px 5px 5px;
+}
+.main-title{
+
 }
