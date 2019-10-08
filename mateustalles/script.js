@@ -79,36 +79,50 @@ function randomSize() {
 function classMenu() {
     let currentWords = document.querySelectorAll(".current-word");   
     let tempDiv = document.querySelector(".temp-div")
-
+    tempDiv.addEventListener ("mouseleave", function() {
+        this.style.display="none";
+    });
 
     for (each of currentWords) {
         each.addEventListener("click", function() { 
-                tempDiv.className="temp-div";
-                this.appendChild(tempDiv);
-                tempDiv.style="";
-                tempDiv.style.left=0+"px";
-                tempDiv.style.top=0+"px";
-                //tempDiv.style.visibility="visible";
                 tempDiv.style.display="inline-block";
+                this.appendChild(tempDiv);
             });
-        
         }
-        //Adiciona funcionalidade aos clicks:
+        //Funcionalidade selecionar stilo:
         let styleDropdown = document.querySelector(".dropdown-style");
             styleDropdown.addEventListener("change", function() {
-                let divWord = this.parentNode.parentNode;
+                let divWord = (styleDropdown.parentNode).parentNode;
                 divWord.className=this.value;
-    })
+                
+        })
 
-        //botão fechar
-        let btnClose = document.querySelector(".btn-close")
-        btnClose.addEventListener("click", function() {
-        this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode)
-        });
+        //Funcionalidade tamanho da fonte
+
+    let fontSizeDropdown = document.querySelector(".dropdown-font-size")
+    let i = 1.0;
+    for (; i<=4.1 ; i+=0.1) {
+        let newFontElement = document.createElement("option");
+        newFontElement.value= i.toFixed(2);
+        newFontElement.class= i.toFixed(2);
+        newFontElement.innerHTML= i.toFixed(2);
+        fontSizeDropdown.appendChild(newFontElement);
+    }
+    fontSizeDropdown.addEventListener("change", function() {
+        let divWord = fontSizeDropdown.parentNode.parentNode.parentNode;
+        console.log(divWord);
+        divWord.style.fontSize="";
+        divWord.style.fontSize=this.value+"em";
+    });
 }
 
 classMenu();
 
+//botão fechar
+//let btnClose = document.querySelector(".btn-close")
+//btnClose.addEventListener("click", function() {
+//    this.parentElement.remove();
+//});
 //função reset
 function reset() {
     letterContainer.remove();
