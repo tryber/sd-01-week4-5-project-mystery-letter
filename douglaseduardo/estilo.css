@@ -1,0 +1,26 @@
+body {
+    text-align: center;
+    
+}
+
+form{
+    width: 100vw;
+    display: flex;  
+    justify-content: center;
+    align-items: center
+}
+
+#caixaTexto{
+    width: 500px;
+    height: 20px;
+    
+}
+
+.cartas{
+    margin: 1%;
+    background-size:100% 100%;
+    -webkit-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    -khtml-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+}
