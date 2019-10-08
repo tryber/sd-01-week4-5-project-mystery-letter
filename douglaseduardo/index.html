@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
     <style>
     body {
         text-align: center;
+        
     }
     form{
         width: 100vw;
@@ -17,28 +18,49 @@
     }
     #caixaTexto{
         width: 500px;
+        height: 20px;
     }
     </style>
 </head>
 <body>
     <form>
         Carta Misteriosa→<input type="text" name="carta" id="caixaTexto">
-        <button onclick="myFunction()">Criar Carta</button>
+        <button type="button" onclick="myFunction()">Criar Carta</button>
     </form>
     
-    <h3 id="frase">teste
+    <h2 id="frase">teste </h2>
+
+    <div id="cartaMisteriosa"></div>
 
 
-
-
-    </h3>
     <script>
-    //variaveis
     let caixaTexto = document.getElementById("caixaTexto")
     let frase = document.getElementById("frase")
-    //funções
+    let fundoDasFrases = {
+    0:"imagem/fundo8.png",
+    1:"imagem/fundo1.png",
+    2:"imagem/fundo2.png",
+    3:"imagem/fundo3.png",
+    4:"imagem/fundo4.png",
+    5:"imagem/fundo5.png",
+    6:"imagem/fundo6.png",
+    7:"imagem/fundo7.png"}
+    
+    let listaComAsPalavras
+
+    function adicionarElemento () { 
+        let cartaMisteriosa = document.getElementById("cartaMisteriosa")
+        let spanNovo = document.createElement("span")
+        cartaMisteriosa.appendChild(spanNovo)
+    }
+
     function myFunction() {
-        frase.innerHTML = caixaTexto.value
+        listaComAsPalavras = caixaTexto.value.split(" ")
+        console.log(listaComAsPalavras)
+        for (let i = 0; i < listaComAsPalavras.length; i++) {
+            adicionarElemento()
+        }
+        
 }
 
     </script>
