@@ -29,3 +29,8 @@ function tableSize(){
         select.appendChild(collum);
     }
 }
+
+function randomNumber(limit){
+    var num = Math.floor(Math.random() * limit);
+    return num
+}
