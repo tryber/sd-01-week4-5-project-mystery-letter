@@ -80,9 +80,6 @@ function classMenu() {
     let currentWords = document.querySelectorAll(".current-word");   
     let tempDiv = document.querySelector(".temp-div")
 
-    tempDiv.addEventListener("mouseleave", function() {
-        this.remove();
-    });
 
     for (each of currentWords) {
         each.addEventListener("click", function() { 
@@ -91,7 +88,8 @@ function classMenu() {
                 tempDiv.style="";
                 tempDiv.style.left=0+"px";
                 tempDiv.style.top=0+"px";
-                tempDiv.style.visibility="visible";
+                //tempDiv.style.visibility="visible";
+                tempDiv.style.display="inline-block";
             });
         
         }
@@ -101,6 +99,12 @@ function classMenu() {
                 let divWord = this.parentNode.parentNode;
                 divWord.className=this.value;
     })
+
+        //botão fechar
+        let btnClose = document.querySelector(".btn-close")
+        btnClose.addEventListener("click", function() {
+        this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode)
+        });
 }
 
 classMenu();

@@ -55,15 +55,26 @@ h1 {
     transform: translate(-50%, -50%);
     overflow: auto;
 }
-/*Classe da div temporária*/
 .temp-div {
-    position: fixed;
+    width: 200px;
+    height: 200px;
+    font-style: none;
+    text-shadow: none;
+    font-weight: none;
+    background-image: none;
+    color: white;
     background-color: black;
-    width: 100px;
-    height: 100px;
-    z-index: 5;
+    position: relative;
+    display: none;
 }
 
+.btn-close {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    background-color: white;
+    color: black;
+}
 
 /*Classes de estilo aleatorio*/
 .underlined{ text-decoration: underline solid white}
@@ -95,3 +106,10 @@ h1 {
 .printout {background-image:url(images/mystery-letter-computer-printout-paper.png)}
 .pink {background-image:url(images/mystery-letter-pink-pattern.png)}
 .rough {background-image:url(images/mystery-letter-rough-paper.png)}
+
+.dropdown-menu {
+    width:120px;
+}
+.remove {
+    display: none;
+}
