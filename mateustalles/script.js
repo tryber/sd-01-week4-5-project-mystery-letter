@@ -14,6 +14,7 @@ coringaRi();
 
 
 input.addEventListener("change", function() {
+    reset();
     stringFormation();
     randomSize();
     //randomColor();
@@ -34,7 +35,6 @@ function randomSize() {
         wordSpan.style.fontSize=randomSize+"em";
         wordSpan.innerHTML=word+" ";
         wordSpan.className="current-word"
-        console.log(wordSpan)
         //Cor aleatoria
         function randomColor() {
             let randomRGB1 = Math.floor((Math.random()*255))+1,
@@ -91,3 +91,12 @@ function classMenu() {
     }
 }
 classMenu();
+
+//função reset
+function reset() {
+    letterContainer.remove();
+    let newLetterContainer = document.createElement("div");
+    newLetterContainer.className="container-result"
+    let globalContainer=document.querySelector(".container");
+    globalContainer.appendChild(newLetterContainer);
+}

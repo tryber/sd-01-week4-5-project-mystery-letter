@@ -48,8 +48,11 @@ h1 {
 
 .container-result {
     position: absolute;
-    height:50%;
-    bottom: 5px;
+    top: 60%;
+    left: 50%;
+    width: 95%;
+    height: 70%;
+    transform: translate(-50%, -50%);
     overflow: auto;
 }
 /*Classe da div temporária*/
