@@ -27,17 +27,22 @@ function tableSize(){
         collum.innerHTML = array[i]
         select.appendChild(collum);
     }
-    fontSize();
+    changeEverything();
 }
 
-function randomNumber(limit){
-    var num = Math.floor(Math.random() * limit) + 20;
+function randomNumber(maxvalue,minvalue){
+    var num = Math.floor(Math.random() * maxvalue) + minvalue;
     return num
 }
 
-function fontSize(){
+function changeEverything(){
+    var fontStyle = ["normal" , "italic" , "oblique" , "initial" , "inherit"]
+    var fontsizefamilyname = ["Georgia" , "Palatino Linotype" , "Book Antiqua" , "Times New Roman" , "Arial" , "Helvetica" , "Arial Black" , "Impact" , "Lucida Sans Unicode" , "Tahoma" , "Verdana" , "Courier New" , "Lucida Console" , "initial"]
+    var fontsizegenericfamily = ["serif" , "sans-serif" , "cursive" , "fantasy", "monospace"]
     for (i = 0; i < document.getElementById("main-table-body").childElementCount; i++){
         var collum = document.getElementById("collum" + i)
-        collum.style.fontSize = randomNumber(70) + "px"
+        collum.style.fontSize = randomNumber(70,20) + "px"
+        collum.style.fontStyle = fontStyle[randomNumber(fontStyle.length,0)]
+        collum.style.fontFamily = fontsizefamilyname[randomNumber(fontsizefamilyname.length,0)] + "," + fontsizegenericfamily[randomNumber(fontsizegenericfamily.length,0)]
     }
 }
