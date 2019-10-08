@@ -1,8 +1,8 @@
 //Carta inicial - Bonus 1
-let input = document.querySelector(".input-letter");
+let letterInput = document.querySelector(".input-letter");
 function coringaRi() {
     letterContainer = document.querySelector(".container-result");
-    let placeholder = input.placeholder;
+    let placeholder = letterInput.placeholder;
     stringArray = [];
     stringArray.push(placeholder.toString().split(" "));
     console.log(stringArray);
@@ -13,7 +13,7 @@ coringaRi();
 //função gera texto em div a partir do input.
 
 
-input.addEventListener("change", function() {
+letterInput.addEventListener("change", function() {
     reset();
     stringFormation();
     randomSize();
@@ -23,12 +23,13 @@ input.addEventListener("change", function() {
 //formação de array de palavras
 function stringFormation () {
     stringArray = [];
-    stringArray.push(input.value.toString().split(" "));
+    stringArray.push(letterInput.value.toString().split(" "));
 }
 
 //função tamanho de letra aleatório
 
 function randomSize() {
+    letterContainer = document.querySelector(".container-result");
     for (let word of stringArray[0]) {
         wordSpan = document.createElement("span");
         let randomSize = ((Math.random()*3)+1);
@@ -65,7 +66,6 @@ function randomSize() {
                 random = Math.floor(Math.random()*14);
                 wordSpan.className+=" "+stylesObj[random];
                 letterContainer.appendChild(wordSpan);
-                wordSpan.classname="";
         }
             randomStyle();
     }
@@ -96,7 +96,7 @@ classMenu();
 function reset() {
     letterContainer.remove();
     let newLetterContainer = document.createElement("div");
-    newLetterContainer.className="container-result"
+    newLetterContainer.className="container-result";
     let globalContainer=document.querySelector(".container");
     globalContainer.appendChild(newLetterContainer);
 }
