@@ -1,3 +1,4 @@
+let caixaTexto = document.getElementById("caixaTexto")
 function escolherAleatorioFundo() {
     let fundoDasFrases = {
     0:"url(imagem/fundo8.png)",
