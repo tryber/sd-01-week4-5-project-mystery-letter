@@ -9,7 +9,7 @@ h1{
     display: flex;
     justify-content: center;
     flex-direction: row;
-    margin-top: 10%;
+    margin-top: 5%;
 }  
 #typeText{
     font-size: 1.5em;
@@ -20,7 +20,7 @@ h1{
     height: 40px;
 }
 #btn{
-    margin-left: 50px;
+    margin-left: 40px;
     border-radius: 50px;
     height: 55px;
     width: 150px;
@@ -30,4 +30,13 @@ h1{
 }
 ::placeholder {
 	color:#cbd0d5;
+}
+p{
+    margin-top: 5%;
+    font-size: 50px;
+    color: #10abff;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
 }
