@@ -19,7 +19,7 @@ function pegarInput() {
 }
 
 function classesCss() {
-    let bg = ["classe-1", "classe-2", "classe-3",  "classe-4","classe-5"]
+    let bg = ["classe-1", "classe-2", "classe-3",  "classe-4","classe-5", "classe-6"]
     return bg
 } 
 
