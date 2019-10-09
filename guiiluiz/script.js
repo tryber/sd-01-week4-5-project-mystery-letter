@@ -9,7 +9,7 @@ var fontVariant = ['normal', 'small-caps'];
 
 function generateLetter() {
     let mysteryLetter = document.getElementById("mysteryLetter");
-    let inputText = document.getElementById('userLetter').value;
+    let inputText = document.getElementById('userInput').value;
     let splitedText = inputText.split(" ");
 
     clearLetter()
@@ -30,6 +30,7 @@ function generateLetter() {
         letterWord.style.fontVariant = fontVariant[randomize(fontVariant)];
         letterWord.style.fontSize = Math.floor(Math.random() * (70 - 30) + 30) + 'px';
     }
+    wordCounter(splitedText)
 }
 
 function generateRandomColor() {
@@ -49,4 +50,10 @@ function clearLetter() {
         let firstChild = mysteryLetter.firstElementChild;
         mysteryLetter.removeChild(firstChild);
     }
+}
+
+function wordCounter(splitedText) {
+    document.getElementsByClassName("wordCounter")[1].innerHTML = splitedText.length;
+    document.getElementsByClassName("wordCounter")[0].style.display = "block";
+    document.getElementsByClassName("wordCounter")[1].style.display = "inline-block";
 }

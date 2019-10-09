@@ -1,10 +1,10 @@
-#userLetter {
+#userInput {
     width: 300px;
     text-align: center;
 }
 
 #mysteryLetter {
-    margin-top: 2%;
+    margin-top: 1%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -14,4 +14,11 @@
     text-align: center;
     margin: 5px;
     padding: 15px;
+}
+
+.wordCounter {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: brown;
+    display: none;
 }
