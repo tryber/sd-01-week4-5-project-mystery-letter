@@ -1,26 +1,30 @@
 function botaoFunc(){
     let botao = document.querySelector(".botao")
     botao.addEventListener('click', function(){
-        capturarTexto()
+        criarTagSpan(capturarTexto())
     }
 )}
 
 function capturarTexto(){
     let valorEscrito = document.querySelector(".jscaptura").value
     let arraySepPalavras = valorEscrito.split(" ")
+    console.log(arraySepPalavras)
     return arraySepPalavras;
 }
 
-function criarTagSpan(){
-     for(i = 0; i < capturarTexto().lenght; i++)
-        let divFeita = document.createElement("div");
-        divFeita.innerHTML= arraySepPalavras[x];
-        document.div.appendChild(divFeita);
-        divFeita.classList.add("divjsfeita");
+function criarTagSpan(text){
+     for(let i = 0; i < text.length; i++){
+        let palavraSeparada = document.createElement("span");
+        palavraSeparada.classList.add("palavrasatrabalhar")
+        palavraSeparada.innerHTML = text[i];
+        let capturarDiv = document.querySelector(".receberpalavras");
+        capturarDiv.appendChild(palavraSeparada);
+    }
+
 }
 
 function determinarEstilo(){
-    for(i = 0; i < arraySepPalavras.length; i++){
+    for(let i = 0; i < arraySepPalavras.length; i++){
         let r = Math.floor(Math.random() * 256);
         let g = Math.floor(Math.random() * 256);
         let b = Math.floor(Math.random() * 256);
@@ -32,7 +36,6 @@ function determinarEstilo(){
 
     botaoFunc()
     
-
 
 
 
