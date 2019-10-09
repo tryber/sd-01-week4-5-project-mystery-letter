@@ -1,3 +1,5 @@
+window.onload = generateLetter;
+
 // Cria arrays de cada 'estilo'
 var backgroundImg = ['background1.png', 'background2.png', 'background3.png', 'background4.png', ''];
 var fontFamily = ['sans-serif', 'serif', 'monospace', 'cursive', 'fantasy'];
