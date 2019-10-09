@@ -8,12 +8,7 @@ function pegarInput() {
         inputSplit = inputFrase.split(" ")
         console.log(inputSplit)
         
-        let bg = [
-            "classe-1", 
-            "classe-2", 
-            "classe-3", 
-            "classe-4"
-        ]       
+        let bg = ["classe-1", "classe-2", "classe-3",  "classe-4","classe-5"]       
         
         for(let i = 0; i < inputSplit.length; i++){  
             

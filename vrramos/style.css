@@ -5,8 +5,10 @@
 }
 
 #resultado{
-    margin-top: 40px;
-    
+    max-width: auto;
+    max-height: auto;
+    margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 .classe-1 {
@@ -43,10 +45,23 @@
 }
 
 .classe-4 {
-    color: rgba(255,255,255,.3);
-    background: #1a1a1a;
-    text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5);
+    color: #FFFFFF;
+    background: #912C22;
+    text-shadow: 0 0 10px #FFFFFF;
+    color: #FFFFFF;
+    background: #912C22;
     margin-left: 30px;
     font-size: 55px;
+    padding: 10px;
+}
+
+.classe-5{
+    color: #FFFFFF;
+    background: #333333;
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+    color: #FFFFFF;
+    background: #333333;
+    margin-left: 30px;
+    font-size: 20px;
     padding: 10px;
 }
