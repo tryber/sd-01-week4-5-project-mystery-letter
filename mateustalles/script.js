@@ -79,7 +79,7 @@ function classMenu() {
     divArray = Array.prototype.slice.call(document.querySelector('.container-result').children ); 
     for (word of currentWords) {
         word.addEventListener("click", function() { 
-                let divIndex = divArray.indexOf(this))
+                divIndex = divArray.indexOf(this)
                 let tempDiv = document.querySelector(".temp-div")
                 tempDiv.style.display="inline-block";
                 //this.appendChild(tempDiv);
@@ -98,8 +98,7 @@ function classMenu() {
     //Funcionalidade selecionar stilo: (Bonus #2)
     let styleDropdown = document.querySelector(".dropdown-style");
     styleDropdown.addEventListener("change", function() {
-        let divWord = styleDropdown.parentNode;
-        divWord.className+=" "+this.value;
+        currentWords[divIndex].className+=" "+this.value;
     })
 
     //Funcionalidade tamanho da fonte - Bonus #2
@@ -113,8 +112,7 @@ function classMenu() {
         }
 
     fontSizeDropdown.addEventListener("change", function() {
-        let divWord = fontSizeDropdown.parentNode;
-        divWord.style.fontSize=this.value+"em";
+        currentWords[divIndex].style.fontSize=this.value+"em";
     });
 
     //Funcionalidade mudança de cores - Bonus #2
@@ -127,7 +125,7 @@ function classMenu() {
     
         picker.on("drag", function(color) {
             target.value = '#' + color;
-            document.querySelector(".temp-div").parentNode.style.backgroundColor=target.value;
+            currentWords[divIndex].style.backgroundColor=target.value;
         });
     });
 }
