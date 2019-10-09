@@ -6,6 +6,7 @@ var fontFamily = ['sans-serif', 'serif', 'monospace', 'cursive', 'fantasy'];
 var fontWeight = ['normal', 'bold', 'bolder'];
 var fontStyle = ['normal', 'italic', 'oblique', 'inherit', 'unset', 'initial'];
 var fontVariant = ['normal', 'small-caps'];
+var textDecoration = ['underline', 'line-through', 'none'];
 
 function generateLetter() {
     let mysteryLetter = document.getElementById("mysteryLetter");
@@ -23,12 +24,13 @@ function generateLetter() {
 
         letterWord.style.backgroundColor = generateRandomColor();
         letterWord.style.color = generateRandomColor();
+        letterWord.style.fontSize = Math.floor(Math.random() * (70 - 30) + 30) + 'px';
         letterWord.style.backgroundImage = "url('" + backgroundImg[randomize(backgroundImg)] + "')";
         letterWord.style.fontFamily = fontFamily[randomize(fontFamily)];
         letterWord.style.fontWeight = fontWeight[randomize(fontWeight)];
         letterWord.style.fontStyle = fontStyle[randomize(fontStyle)];
         letterWord.style.fontVariant = fontVariant[randomize(fontVariant)];
-        letterWord.style.fontSize = Math.floor(Math.random() * (70 - 30) + 30) + 'px';
+        letterWord.style.textDecoration = textDecoration[randomize(textDecoration)];
     }
     wordCounter(splitedText)
 }
