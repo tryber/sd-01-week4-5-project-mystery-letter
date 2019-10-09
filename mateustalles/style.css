@@ -111,8 +111,7 @@ h1 {
 
 .dropdown-menu {width:120px;}
 .form {overflow: auto; width: 150px;}
-
-.color-picker {
-    position: fixed;
-    width: 100px;
+.color-container {
+    
+    border: 1px solid white;
 }

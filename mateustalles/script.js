@@ -1,7 +1,7 @@
 //Carta inicial - Bonus 1
 let letterInput = document.querySelector(".input-letter");
 function coringaRi() {
-    letterContainer = document.querySelector(".container-result");
+    //letterContainer = document.querySelector(".container-result");
     let placeholder = letterInput.placeholder;
     stringArray = [];
     stringArray.push(placeholder.toString().split(" "));
@@ -15,7 +15,7 @@ letterInput.addEventListener("change", function() {
     reset();
     stringFormation();
     randomSize();
-    //randomColor();
+    classMenu();
 });
 
 //formação de array de palavras
@@ -27,9 +27,9 @@ function stringFormation () {
 //função tamanho de letra aleatório
 
 function randomSize() {
-    letterContainer = document.querySelector(".container-result");
+    let letterContainer = document.querySelector(".container-result");
     for (let word of stringArray[0]) {
-        wordSpan = document.createElement("span");
+        let wordSpan = document.createElement("span");
         let randomSize = ((Math.random()*3)+1);
         wordSpan.style.fontSize=randomSize+"em";
         wordSpan.innerHTML=word+" ";
@@ -65,73 +65,85 @@ function randomSize() {
                 16: "pink",
                 17: "rough"
             };
-                random = Math.floor(Math.random()*18);
-                wordSpan.className+=" "+stylesObj[random];
-                letterContainer.appendChild(wordSpan);
+            random = Math.floor(Math.random()*18);
+            wordSpan.className+=" "+stylesObj[random];
+            letterContainer.appendChild(wordSpan);
         }
             randomStyle();
     }
 }
 
-//Bonos 2 -  Menu de classes
+//Bonus 2 -  Menu de classes
 function classMenu() {
     let currentWords = document.querySelectorAll(".current-word");   
-    let tempDiv = document.querySelector(".temp-div")
-    tempDiv.addEventListener ("mouseleave", function() {
-        this.style.display="none";
-    });
 
-    for (each of currentWords) {
-        each.addEventListener("click", function() { 
+    for (word of currentWords) {
+        word.addEventListener("click", function() { 
+                let tempDiv = document.querySelector(".temp-div")
                 tempDiv.style.display="inline-block";
+                tempDiv.addEventListener ("mouseleave", function() {
+                    let colorPallete = document.querySelector(".color-picker-sv")
+                    //Não fecha DIV se paleta de cor estiver aberta.
+                    if (document.body.contains(colorPallete)) {
+                        tempDiv.style.display="inline-block";
+                    } else {
+                        this.style.display="none";
+                    }
+                });
                 this.appendChild(tempDiv);
         });
     }
-}
 
- 
-classMenu();
+    //Funcionalidade selecionar stilo: (Bonus #2)
+    let styleDropdown = document.querySelector(".dropdown-style");
+    styleDropdown.addEventListener("blur", function() {
+        let divWord = (styleDropdown.parentNode).parentNode;
+        divWord.className=this.value;
+    })
 
-//Funcionalidade selecionar stilo:
-let styleDropdown = document.querySelector(".dropdown-style");
-styleDropdown.addEventListener("blur", function() {
-    let divWord = (styleDropdown.parentNode).parentNode;
-    divWord.className=this.value;
-})
+    //Funcionalidade tamanho da fonte - Bonus #2
 
-//Funcionalidade tamanho da fonte
-
-let fontSizeDropdown = document.querySelector(".dropdown-font-size")
-let i = 1.0;
-for (; i<=4.1 ; i+=0.1) {
+    let fontSizeDropdown = document.querySelector(".dropdown-font-size")
     let newFontElement = document.createElement("option");
-    newFontElement.value= i.toFixed(2);
-    newFontElement.class= i.toFixed(2);
-    newFontElement.innerHTML= i.toFixed(2);
-    fontSizeDropdown.appendChild(newFontElement);
-}
-fontSizeDropdown.addEventListener("blur", function() {
-    let divWord = fontSizeDropdown.parentNode.parentNode;
-    console.log(divWord);
-    divWord.style.fontSize="";
-    divWord.style.fontSize=this.value+"em";
-});
-
-//Como por algum motivo bizarro não consegui usar a paleta de cores do HTML, vou imbutir uma em
-//javaScript que achei na net.
-
-var picker = new CP(document.querySelector(".color-picker"));
-var target = document.querySelector(".color-picker");
-target.addEventListener("click", function() {
-    picker.on("drag", function(color) {
-        target.value = '#' + color;
-        console.log(target.value);
+    if (! fontSizeDropdown.contains(newFontElement) ) {
+        for (let i=0.0; i<=4.1 ; i+=0.1) {
+            newFontElement.value= i.toFixed(2);
+            newFontElement.innerHTML= i.toFixed(2);
+            fontSizeDropdown.appendChild(newFontElement);
+        }
+    }
+    fontSizeDropdown.addEventListener("blur", function() {
+        let divWord = fontSizeDropdown.parentNode.parentNode;
+        console.log(divWord);
+        divWord.style.fontSize="";
+        divWord.style.fontSize=this.value+"em";
     });
-});
+
+    //Funcionalidade mudança de cores - Bonus #2
+    //Como por algum motivo bizarro não consegui usar a paleta de cores do HTML, vou imbutir uma em
+    //javaScript que achei na net.
+
+    var picker = new CP(document.querySelector(".color-container"));
+    var target = document.querySelector(".color-container");
+    target.addEventListener("click", function() {
     
+        picker.on("drag", function(color) {
+            target.value = '#' + color;
+            let divWord = fontSizeDropdown.parentNode.parentNode;
+            divWord.style.backgroundColor=target.value;
+            
+        });
+    });
+}
+
+window.addEventListener("load",classMenu);    
+
 
 function reset() {
-    letterContainer.remove();
+    let currentWords = document.querySelectorAll(".current-word");   
+    for (word of currentWords) {
+        word.remove();
+    }
     let newLetterContainer = document.createElement("div");
     newLetterContainer.className="container-result";
     let globalContainer=document.querySelector(".container");
