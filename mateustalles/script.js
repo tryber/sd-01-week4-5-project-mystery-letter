@@ -75,12 +75,14 @@ function randomSize() {
 
 //Bonus 2 -  Menu de classes
 function classMenu() {
-    let currentWords = document.querySelectorAll(".current-word");   
+    let currentWords = document.querySelectorAll(".current-word");  
+    divArray = Array.prototype.slice.call(document.querySelector('.container-result').children ); 
     for (word of currentWords) {
         word.addEventListener("click", function() { 
+                let divIndex = divArray.indexOf(this))
                 let tempDiv = document.querySelector(".temp-div")
                 tempDiv.style.display="inline-block";
-                this.appendChild(tempDiv);
+                //this.appendChild(tempDiv);
                 tempDiv.addEventListener ("mouseleave", function() {
                     let colorPallete = document.querySelector(".color-picker-sv")
                     //Não fecha DIV se paleta de cor estiver aberta.
@@ -96,7 +98,7 @@ function classMenu() {
     //Funcionalidade selecionar stilo: (Bonus #2)
     let styleDropdown = document.querySelector(".dropdown-style");
     styleDropdown.addEventListener("change", function() {
-        let divWord = styleDropdown.parentNode.parentNode;
+        let divWord = styleDropdown.parentNode;
         divWord.className+=" "+this.value;
     })
 
@@ -111,7 +113,7 @@ function classMenu() {
         }
 
     fontSizeDropdown.addEventListener("change", function() {
-        let divWord = fontSizeDropdown.parentNode.parentNode;
+        let divWord = fontSizeDropdown.parentNode;
         divWord.style.fontSize=this.value+"em";
     });
 
