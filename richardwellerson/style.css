@@ -41,3 +41,7 @@ input {
     background-image: linear-gradient(to bottom, #8f8f8f, #727a80);
     text-decoration: none;
   }
+
+  p{
+    font-size: 50px;
+  }
