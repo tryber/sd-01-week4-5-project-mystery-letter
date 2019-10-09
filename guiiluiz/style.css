@@ -1,0 +1,23 @@
+.fontSubtitle {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: brown;
+}
+
+#userLetter {
+    width: 300px;
+    text-align: center;
+}
+
+#mysteryLetter {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.mysteryLetter {
+    text-align: center;
+    margin: 5px;
+    padding: 15px;
+}
