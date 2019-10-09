@@ -5,8 +5,8 @@ function coringaRi() {
     let placeholder = letterInput.placeholder;
     stringArray = [];
     stringArray.push(placeholder.toString().split(" "));
-    console.log(stringArray);
     randomSize();
+    classMenu();
 }
 coringaRi();
 
@@ -76,46 +76,42 @@ function randomSize() {
 //Bonus 2 -  Menu de classes
 function classMenu() {
     let currentWords = document.querySelectorAll(".current-word");   
-
     for (word of currentWords) {
         word.addEventListener("click", function() { 
                 let tempDiv = document.querySelector(".temp-div")
                 tempDiv.style.display="inline-block";
+                this.appendChild(tempDiv);
                 tempDiv.addEventListener ("mouseleave", function() {
                     let colorPallete = document.querySelector(".color-picker-sv")
                     //Não fecha DIV se paleta de cor estiver aberta.
                     if (document.body.contains(colorPallete)) {
                         tempDiv.style.display="inline-block";
                     } else {
-                        this.style.display="none";
+                        tempDiv.style.display="none";
                     }
                 });
-                this.appendChild(tempDiv);
         });
     }
 
     //Funcionalidade selecionar stilo: (Bonus #2)
     let styleDropdown = document.querySelector(".dropdown-style");
-    styleDropdown.addEventListener("blur", function() {
-        let divWord = (styleDropdown.parentNode).parentNode;
-        divWord.className=this.value;
+    styleDropdown.addEventListener("change", function() {
+        let divWord = styleDropdown.parentNode.parentNode;
+        divWord.className+=" "+this.value;
     })
 
     //Funcionalidade tamanho da fonte - Bonus #2
 
     let fontSizeDropdown = document.querySelector(".dropdown-font-size")
-    let newFontElement = document.createElement("option");
-    if (! fontSizeDropdown.contains(newFontElement) ) {
-        for (let i=0.0; i<=4.1 ; i+=0.1) {
+        for (let i = 0; i<=4.1 ; i+=0.1) {
+            let newFontElement = document.createElement("option");
             newFontElement.value= i.toFixed(2);
             newFontElement.innerHTML= i.toFixed(2);
             fontSizeDropdown.appendChild(newFontElement);
         }
-    }
-    fontSizeDropdown.addEventListener("blur", function() {
+
+    fontSizeDropdown.addEventListener("change", function() {
         let divWord = fontSizeDropdown.parentNode.parentNode;
-        console.log(divWord);
-        divWord.style.fontSize="";
         divWord.style.fontSize=this.value+"em";
     });
 
@@ -129,19 +125,17 @@ function classMenu() {
     
         picker.on("drag", function(color) {
             target.value = '#' + color;
-            let divWord = fontSizeDropdown.parentNode.parentNode;
-            divWord.style.backgroundColor=target.value;
-            
+            document.querySelector(".temp-div").parentNode.style.backgroundColor=target.value;
         });
     });
 }
 
-window.addEventListener("load",classMenu);    
+//window.addEventListener("load",classMenu);    
 
 
 function reset() {
-    let currentWords = document.querySelectorAll(".current-word");   
-    for (word of currentWords) {
-        word.remove();
+    let currentWords = document.querySelectorAll("[class*='current-word']");   
+    for (let word of currentWords) {
+        document.querySelector(".container-result").removeChild(word);
     }
 }
