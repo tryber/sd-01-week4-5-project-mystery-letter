@@ -144,8 +144,4 @@ function reset() {
     for (word of currentWords) {
         word.remove();
     }
-    let newLetterContainer = document.createElement("div");
-    newLetterContainer.className="container-result";
-    let globalContainer=document.querySelector(".container");
-    globalContainer.appendChild(newLetterContainer);
 }
