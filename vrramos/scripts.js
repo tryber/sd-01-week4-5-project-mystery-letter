@@ -14,13 +14,11 @@ function clicarGerar() {
 
 function pegarInput() {   
     let inputFrase = document.querySelector('#input-frase').value
-    inputSplit = inputFrase.split(" ")
-    return inputSplit
+    return inputSplit = inputFrase.split(" ")
 }
 
 function classesCss() {
-    let bg = ["classe-1", "classe-2", "classe-3",  "classe-4","classe-5", "classe-6"]
-    return bg
+    return ["classe-1", "classe-2", "classe-3",  "classe-4","classe-5", "classe-6"]
 } 
 
 function inserirClasses() {
