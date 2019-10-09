@@ -46,6 +46,11 @@ h1 {
     transform: translate(-50%);
 }
 
+.btn-submit {
+    position: absolute;
+    right: 25%;
+}
+
 .container-result {
     position: absolute;
     top: 60%;

@@ -1,5 +1,6 @@
 //Carta inicial - Bonus 1
 let letterInput = document.querySelector(".input-letter");
+let btnEnvia = document.querySelector(".btn-submit");
 function coringaRi() {
     //letterContainer = document.querySelector(".container-result");
     let placeholder = letterInput.placeholder;
@@ -11,7 +12,7 @@ function coringaRi() {
 coringaRi();
 
 //função gera texto em div a partir do input.
-letterInput.addEventListener("change", function() {
+btnEnvia.addEventListener("click", function() {
     reset();
     stringFormation();
     randomSize();
@@ -104,13 +105,6 @@ function classMenu() {
     //Funcionalidade tamanho da fonte - Bonus #2
 
     let fontSizeDropdown = document.querySelector(".dropdown-font-size")
-        for (let i = 0; i<=4.1 ; i+=0.1) {
-            let newFontElement = document.createElement("option");
-            newFontElement.value= i.toFixed(2);
-            newFontElement.innerHTML= i.toFixed(2);
-            fontSizeDropdown.appendChild(newFontElement);
-        }
-
     fontSizeDropdown.addEventListener("change", function() {
         currentWords[divIndex].style.fontSize=this.value+"em";
     });
