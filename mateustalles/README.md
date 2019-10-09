@@ -1,6 +1,6 @@
 Bem-vindo ao Escritor de Cartas Misteriosas
 -por Mateus Talles
-Link GitPages: https:/mateustalles.github.io/projetos/mystery-letter
+Link GitPages: https://mateustalles.github.io/projetos/carta-misterio/mateustalles/index.html
 
 
 Nesta  edição fizemos uma homenagem ao Coringa, genial personagem
