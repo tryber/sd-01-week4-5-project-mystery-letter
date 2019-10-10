@@ -29,9 +29,9 @@ h1{
     background: linear-gradient(21deg, #10abff, #1beabd);
 }
 ::placeholder {
-	color:#cbd0d5;
+    color:#cbd0d5;
 }
-p{
+#showText{
     margin-top: 5%;
     font-size: 50px;
     color: #10abff;
