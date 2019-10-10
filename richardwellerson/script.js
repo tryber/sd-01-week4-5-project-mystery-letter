@@ -52,8 +52,9 @@ function determinarEstilo() {
 function apagaTags() {
     let qtdSpan = document.getElementsByClassName("receberpalavras");
     let qtdTagsSpan = document.getElementsByTagName("span");
-    for (let i = 0; i <= qtdTagsSpan.length; i++) {
-        qtdSpan.removeChild(qtdSpan.firstChild())
+    let tamanhoSpan = qtdTagsSpan.length
+    for (let i = 0; i < tamanhoSpan ; i++) {
+        qtdSpan[0].removeChild(qtdSpan.firstElementChild())
     }
 }
 
