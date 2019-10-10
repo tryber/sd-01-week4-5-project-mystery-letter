@@ -1,3 +1,6 @@
+O que é?
+Um site para que a pessoa que utilizá-lo, possa escrever uma frase e gerar uma carta que pareça ser retirada de várias fontes diferentes.
+
 Instruções a seguir:
 
 Requisitos
