@@ -53,8 +53,9 @@ function apagaTags() {
     let qtdSpan = document.getElementsByClassName("receberpalavras");
     let qtdTagsSpan = document.getElementsByTagName("span");
     let tamanhoSpan = qtdTagsSpan.length
+    let rmPrimeiroFilho = qtdSpan.firstElementChild()
     for (let i = 0; i < tamanhoSpan ; i++) {
-        qtdSpan[0].removeChild(qtdSpan.firstElementChild())
+        qtdSpan[0].removeChild(rmPrimeiroFilho)
     }
 }
 
