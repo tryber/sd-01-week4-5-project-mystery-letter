@@ -17,11 +17,22 @@ function criatorio(envia) {
     receber.appendChild(tags)
     tags.insertAdjacentHTML('afterbegin', envia)
 }
+function removeAll(){
+    let palavras = document.getElementsByClassName("classe-criada-pelo-usuario")
+    let control=palavras.length;
+    if(palavras.length!=0){
+        for(let i = 0; i <= control; i++){
+            remove(palavras[i])
+        }
+    }
+}
+function remove(tags) {
+    receber.removeChild(tags)
+}
 function ativarCarta() {
-    
-    palavras = frase.value.split(" ")
-    console.log(palavras)
-    for (const armazena of palavras) {
+    removeAll()
+    palavras = frase.value.split(" ");
+    for (const armazena of palavras){
         criatorio(armazena)
     }   
     var tagsCriadas = document.getElementsByClassName("classe-criada-pelo-usuario")
