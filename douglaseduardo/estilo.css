@@ -1,24 +1,22 @@
 body {
     text-align: center;
-    
 }
 
-form{
+form {
     width: 100vw;
-    display: flex;  
+    display: flex;
     justify-content: center;
     align-items: center
 }
 
-#caixaTexto{
+#caixaTexto {
     width: 500px;
     height: 20px;
-    
 }
 
-.cartas{
+.cartas {
     margin: 1%;
-    background-size:100% 100%;
+    background-size: 100% 100%;
     -webkit-background-size: 100% 100%;
     -o-background-size: 100% 100%;
     -khtml-background-size: 100% 100%;
