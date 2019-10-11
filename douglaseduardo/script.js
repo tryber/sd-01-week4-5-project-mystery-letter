@@ -65,13 +65,8 @@ function myFunction() {
 function apagarCarta(pai) {
     let span = document.getElementsByTagName("span")
     let tamanhoSpan = span.length - 1
-
     for (let i = tamanhoSpan; i >= 0; i--) {
         let elemento = span[i]
         pai.removeChild(elemento)
     }
-}
-
-function restartarPagina() {
-    window.history.go(0)
 }
