@@ -22,12 +22,12 @@ function generateLetter() {
         document.getElementsByClassName("wordCounter")[0].style.display = "none";
         document.getElementsByClassName("wordCounter")[1].style.display = "none";
     } else {
-        for (let index = 0; index < splitedText.length; index++) {
+        for (let word of splitedText) {
             let letterWord = document.createElement('span');
             letterWord.className = "mysteryLetter";
             mysteryLetter.appendChild(letterWord);
 
-            letterWord.innerHTML = splitedText[index];
+            letterWord.innerHTML = word;
 
             letterWord.style.backgroundColor = generateRandomColor();
             letterWord.style.color = generateRandomColor();
