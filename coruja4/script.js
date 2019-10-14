@@ -1,61 +1,46 @@
-var frase = document.getElementById("frase-carta-adicionada-pelo-usuario")
-var receber = document.getElementById("recebe-frase-gerada")
-var gerador = document.getElementById("gerar-carta")
-var teste = document.querySelector(".teste")
-let criar = document.createElement("div")
-let titulo = document.getElementsByTagName("h1")
+var frase = document.getElementById("frase-carta-adicionada-pelo-usuario");
+var receber = document.getElementById("recebe-frase-gerada");
+var gerador = document.getElementById("gerar-carta");
+let criar = document.createElement("div");
+let titulo = document.getElementsByTagName("h1");
 
 let corFundo = ["red","yellow","green","blue"];
 let tamanhoDeFonte = ["5mm","8mm","12mm","15mm"];
-let imagemDeFundo = ['background1.png','background2.png','background3.png']
+let imagemDeFundo = ['background1.png','background2.png','background3.png'];
 let efeitosNaFonte = ["normal","italic","oblique","initial"];
 let corDeFundo = ["red","yellow","green","blue"];
 
 function criatorio(envia) {
-    let tags = document.createElement("span")
-    tags.setAttribute("class","classe-criada-pelo-usuario")
-    receber.appendChild(tags)
-    tags.insertAdjacentHTML('afterbegin', envia)
+    let tags = document.createElement("span");
+    tags.setAttribute("class","classe-criada-pelo-usuario");
+    receber.appendChild(tags);
+    tags.insertAdjacentHTML('afterbegin', envia);
 }
-function removeAll(){
-    let palavras = document.getElementsByClassName("classe-criada-pelo-usuario")
-    let control=palavras.length;
-    if(palavras.length!=0){
-        for(let i = 0; i <= control; i++){
-            remove(palavras[i])
-        }
+
+function removeAll() {
+    let pai = document.getElementById("recebe-frase-gerada");
+    while(pai.firstChild) {
+        pai.firstChild.remove();
     }
 }
-function remove(tags) {
-    receber.removeChild(tags)
-}
+
 function ativarCarta() {
-    removeAll()
+    removeAll();
     palavras = frase.value.split(" ");
-    for (const armazena of palavras){
-        criatorio(armazena)
+    for (const armazena of palavras) {
+        criatorio(armazena);
     }   
-    var tagsCriadas = document.getElementsByClassName("classe-criada-pelo-usuario")
-    for(let i = 0; i < tagsCriadas.length; i++){
+    var tagsCriadas = document.getElementsByClassName("classe-criada-pelo-usuario");
+    for(let indice = 0; indice < tagsCriadas.length; indice++) {
         let indiceAleatorio1 = Math.floor(Math.random()*3);
         let indiceAleatorio2 = Math.floor(Math.random()*3);
         let indiceAleatorio3 = Math.floor(Math.random()*3);
         let indiceAleatorio4 = Math.floor(Math.random()*3);
         let indiceAleatorio5 = Math.floor(Math.random()*3);
-        tagsCriadas[i].style.backgroundImage = "url('" + imagemDeFundo[indiceAleatorio1] + "')";
-        tagsCriadas[i].style.fontSize = tamanhoDeFonte[indiceAleatorio2];
-        tagsCriadas[i].style.color = corFundo[indiceAleatorio3];
-        tagsCriadas[i].style.fontStyle = efeitosNaFonte[indiceAleatorio4];
-        tagsCriadas[i].style.backgroundColor = corDeFundo[indiceAleatorio5];
+        tagsCriadas[indice].style.backgroundImage = "url('" + imagemDeFundo[indiceAleatorio1] + "')";
+        tagsCriadas[indice].style.fontSize = tamanhoDeFonte[indiceAleatorio2];
+        tagsCriadas[indice].style.color = corFundo[indiceAleatorio3];
+        tagsCriadas[indice].style.fontStyle = efeitosNaFonte[indiceAleatorio4];
+        tagsCriadas[indice].style.backgroundColor = corDeFundo[indiceAleatorio5];
     }
 }
-
-
-
-
-
-
-
-
-
-
