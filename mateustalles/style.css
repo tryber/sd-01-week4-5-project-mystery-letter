@@ -6,18 +6,15 @@ body {
 div {
     cursor: default;
 }
-
 h1 {
     position: absolute;
     top: 10px;
     left: 50%;
     transform: translate(-50%);
 }
-
 .active,.active-hover {
     outline: 2px solid white;
 }
-
 .container {
     position: absolute;
     margin-top: 5px;
@@ -34,23 +31,19 @@ h1 {
     border: 2px double black;
     overflow: auto;
 }
-
 .input-letter {
     border: 1px solid black;
 }
-
 .input-container {
     position: absolute;
     height: 400px;
     left: 50%;
     transform: translate(-50%);
 }
-
 .btn-submit {
     position: absolute;
     right: 25%;
 }
-
 .container-result {
     position: absolute;
     top: 60%;
@@ -72,9 +65,7 @@ h1 {
     background-color: black;
     position: relative;
     display: none;
-
 }
-
 .btn-close {
     position: absolute;
     top: 0%;
@@ -82,7 +73,6 @@ h1 {
     background-color: white;
     color: black;
 }
-
 /*Classes de estilo aleatorio*/
 .underlined{ text-decoration: underline solid white}
 .overlined{ text-decoration: overline solid white}
@@ -113,10 +103,13 @@ h1 {
 .printout {background-image:url(images/mystery-letter-computer-printout-paper.png)}
 .pink {background-image:url(images/mystery-letter-pink-pattern.png)}
 .rough {background-image:url(images/mystery-letter-rough-paper.png)}
-
+.border-radius-1 {border-radius: 50px;}
+.border-radius-2 {border-radius: 50px;}
+.border-radius-3 {border-radius: 50px;}
+.saturate {filter: saturate(8);}
+.rotate-upsidedown { transform: rotate(45); }
 .dropdown-menu {width:120px;}
 .form {overflow: auto; width: 150px;}
 .color-container {
-    
     border: 1px solid white;
 }

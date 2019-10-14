@@ -1,3 +1,20 @@
+function addFontSizeOptions() {
+    let fontSizesArray = [], fontSizes = 0;
+    fontSizes.toFixed(2);
+    for (fontSizes = 0.1;fontSizes < 4.1; fontSizes += 0.1) {
+        fontSizesArray.push(fontSizes.toFixed(2));
+    }
+    let dropdown = document.querySelector(".dropdown-font-size")
+    for (let fontSize of fontSizesArray) {
+        let option = document.createElement("option")
+        option.text = fontSize
+        option.value = fontSize
+        dropdown.appendChild(option)
+    }
+}
+
+  window.addEventListener("load",addFontSizeOptions);
+
 //Carta inicial - Bonus 1
 let letterInput = document.querySelector(".input-letter");
 let btnEnvia = document.querySelector(".btn-submit");
@@ -64,9 +81,14 @@ function randomSize() {
                 14: "canvas",
                 15: "printout",
                 16: "pink",
-                17: "rough"
+                17: "rough",
+                18: "border-radius-1",
+                19: "border-radius-2",
+                20: "border-radius-3",
+                21: "saturate",
+                22: "rotate-upsidedown"
             };
-            random = Math.floor(Math.random()*18);
+            random = Math.floor(Math.random()*23);
             wordSpan.className+=" "+stylesObj[random];
             letterContainer.appendChild(wordSpan);
         }
