@@ -52,11 +52,9 @@ function randomize(array) {
 
 function clearLetter() {
     let mysteryLetter = document.getElementById("mystery-letter");
-    let numberOfLetters = document.getElementsByClassName("mystery-letter").length;
-
-    for (let i = 0; i < numberOfLetters; i++) {
-        let firstChild = mysteryLetter.firstElementChild;
-        mysteryLetter.removeChild(firstChild);
+    
+    while (mysteryLetter.firstChild) {
+        mysteryLetter.firstChild.remove();
     }
 }
 
