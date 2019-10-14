@@ -12,7 +12,10 @@ function addFontSizeOptions() {
         dropdown.appendChild(option)
     }
 }
-  window.addEventListener("load",addFontSizeOptions);
+window.addEventListener("load", function() {
+    addFontSizeOptions();
+    setStyle();
+});
 
 let letterInput = document.querySelector(".input-letter");
 let btnEnvia = document.querySelector(".btn-submit");
@@ -151,4 +154,100 @@ function wordCounter() {
             wordCounter.innerHTML = counter+" palavras";
         }
     }
+}
+
+function setStyle() {
+    let styles = [{
+      value: "underlined",
+      classes: ["dropdown", "underlined"],
+      text: "Underlined"
+    }, {
+      value: "overlined",
+      classes: ["dropdown", "overlined"],
+      text: "Overlined"
+    }, {
+        value: "italic",
+        classes: ["dropdown", "italic"],
+        text: "Italic"
+    }, {
+        value: "linethrough",
+        classes: ["dropdown", "linethrough"],
+        text: "Linethrough"
+    }, {
+        value: "smallcaps",
+        classes: ["dropdown", "smallcaps"],
+        text: "Smallcaps"
+    }, {
+        value: "bold",
+        classes: ["dropdown", "bold"],
+        text: "Bold"
+    }, {
+        value: "lspacing-small",
+        classes: ["dropdown", "lspacing-small"],
+        text: "L-Spacing Small"
+    }, {
+        value: "lspacing-big",
+        classes: ["dropdown", "lspacing-big"],
+        text: "L-Spacing Big"
+    }, {
+        value: "capitalize",
+        classes: ["dropdown", "lspacing-small"],
+        text: "Capitalize"
+    }, {
+        value: "neon",
+        classes: ["dropdown", "neon"],
+        text: "Neon"
+    }, {
+        value: "flaming",
+        classes: ["dropdown", "flaming"],
+        text: "Flaming"
+    }, {
+        value: "comic",
+        classes: ["dropdown", "comic"],
+        text: "Comic"
+    }, {
+        value: "vegas",
+        classes: ["dropdown", "vegas"],
+        text: "Vegas"
+    }, {
+        value: "deep",
+        classes: ["dropdown", "deep"],
+        text: "Deep"
+    }, {
+        value: "canvas",
+        classes: ["dropdown", "canvas"],
+        text: "Canvas"
+    }, {
+        value: "printout",
+        classes: ["dropdown", "printout"],
+        text: "Printout"
+    }, {
+        value: "pink",
+        classes: ["dropdown", "pink"],
+        text: "Pink"
+    }, {
+        value: "rough",
+        classes: ["dropdown", "rough"],
+        text: "Rough"
+    }, {
+        value: "border-radius-1",
+        classes: ["dropdown", "border-radius-1"],
+        text: "Border Radius I"
+    }, {
+        value: "border-radius-2",
+        classes: ["dropdown", "border-radius-2"],
+        text: "Border Radius II"
+    }, {
+        value: "border-radius-3",
+        classes: ["dropdown", "border-radius-3"],
+        text: "Border Radius III"
+    }];
+    let dropdown = document.querySelector(".dropdown-style")
+    for (let style of styles) {
+    let option = document.createElement("option");
+    option.value = style.value;
+    option.className = style.classes.join(" ");
+    option.text = style.text;
+    dropdown.appendChild(option);
+  }
 }
