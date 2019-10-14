@@ -17,8 +17,13 @@
 }
 
 .word-counter {
+    margin-top: 1%;
     font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
     color: brown;
-    display: none;
+}
+
+.word-counter-number {
+    font-size: 16px;
+    color: darkred;
+    font-weight: bold;
 }

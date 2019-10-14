@@ -18,9 +18,8 @@ function generateLetter() {
     clearLetter()
 
     if (inputText == "") {
-        alert("Por favor, digite sua carta!")
         document.getElementsByClassName("word-counter")[0].style.display = "none";
-        document.getElementsByClassName("word-counter")[1].style.display = "none";
+        alert("Por favor, digite sua carta!");
     } else {
         for (let word of splitedText) {
             let letterWord = document.createElement('span');
@@ -52,6 +51,7 @@ function randomize(array) {
 }
 
 function clearLetter() {
+    let mysteryLetter = document.getElementById("mystery-letter");
     let numberOfLetters = document.getElementsByClassName("mystery-letter").length;
 
     for (let i = 0; i < numberOfLetters; i++) {
@@ -61,7 +61,5 @@ function clearLetter() {
 }
 
 function wordCounter(splitedText) {
-    document.getElementsByClassName("word-counter")[1].innerHTML = splitedText.length;
-    document.getElementsByClassName("word-counter")[0].style.display = "block";
-    document.getElementsByClassName("word-counter")[1].style.display = "inline-block";
+    document.getElementsByClassName("word-counter-number")[0].innerHTML = splitedText.length;
 }
