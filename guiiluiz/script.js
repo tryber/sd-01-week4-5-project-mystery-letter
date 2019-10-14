@@ -9,8 +9,8 @@ var fontVariant = ['normal', 'small-caps'];
 var textDecoration = ['underline', 'line-through', 'none'];
 
 function generateLetter() {
-    let mysteryLetter = document.getElementById("mysteryLetter");
-    let inputText = document.getElementById('userInput').value;
+    let mysteryLetter = document.getElementById("mystery-letter");
+    let inputText = document.getElementById('user-input').value;
     let splitedText = inputText.split(" ");
     let maxFontSize = 70;
     let minFontSize = 30;
@@ -19,12 +19,12 @@ function generateLetter() {
 
     if (inputText == "") {
         alert("Por favor, digite sua carta!")
-        document.getElementsByClassName("wordCounter")[0].style.display = "none";
-        document.getElementsByClassName("wordCounter")[1].style.display = "none";
+        document.getElementsByClassName("word-counter")[0].style.display = "none";
+        document.getElementsByClassName("word-counter")[1].style.display = "none";
     } else {
         for (let word of splitedText) {
             let letterWord = document.createElement('span');
-            letterWord.className = "mysteryLetter";
+            letterWord.className = "mystery-letter";
             mysteryLetter.appendChild(letterWord);
 
             letterWord.innerHTML = word;
@@ -52,7 +52,7 @@ function randomize(array) {
 }
 
 function clearLetter() {
-    let numberOfLetters = document.getElementsByClassName("mysteryLetter").length;
+    let numberOfLetters = document.getElementsByClassName("mystery-letter").length;
 
     for (let i = 0; i < numberOfLetters; i++) {
         let firstChild = mysteryLetter.firstElementChild;
@@ -61,7 +61,7 @@ function clearLetter() {
 }
 
 function wordCounter(splitedText) {
-    document.getElementsByClassName("wordCounter")[1].innerHTML = splitedText.length;
-    document.getElementsByClassName("wordCounter")[0].style.display = "block";
-    document.getElementsByClassName("wordCounter")[1].style.display = "inline-block";
+    document.getElementsByClassName("word-counter")[1].innerHTML = splitedText.length;
+    document.getElementsByClassName("word-counter")[0].style.display = "block";
+    document.getElementsByClassName("word-counter")[1].style.display = "inline-block";
 }
