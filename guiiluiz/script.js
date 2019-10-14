@@ -19,7 +19,9 @@ function generateLetter() {
 
     if (inputText == "") {
         document.getElementsByClassName("word-counter")[0].style.display = "none";
-        alert("Por favor, digite sua carta!");
+        setTimeout(function(){ 
+            alert('Digite sua carta!');
+        }, 10);
     } else {
         for (let word of splitedText) {
             let letterWord = document.createElement('span');
