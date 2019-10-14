@@ -12,37 +12,43 @@ function generateLetter() {
     let mysteryLetter = document.getElementById("mysteryLetter");
     let inputText = document.getElementById('userInput').value;
     let splitedText = inputText.split(" ");
+    let maxFontSize = 70;
+    let minFontSize = 30;
 
     clearLetter()
 
-    for (let index = 0; index < splitedText.length; index++) {
-        let letterWord = document.createElement('span');
-        letterWord.className = "mysteryLetter";
-        mysteryLetter.appendChild(letterWord);
+    if (inputText == "") {
+        alert("Por favor, digite sua carta!")
+        document.getElementsByClassName("wordCounter")[0].style.display = "none";
+        document.getElementsByClassName("wordCounter")[1].style.display = "none";
+    } else {
+        for (let index = 0; index < splitedText.length; index++) {
+            let letterWord = document.createElement('span');
+            letterWord.className = "mysteryLetter";
+            mysteryLetter.appendChild(letterWord);
 
-        letterWord.innerHTML = splitedText[index];
+            letterWord.innerHTML = splitedText[index];
 
-        letterWord.style.backgroundColor = generateRandomColor();
-        letterWord.style.color = generateRandomColor();
-        letterWord.style.fontSize = Math.floor(Math.random() * (70 - 30) + 30) + 'px';
-        letterWord.style.backgroundImage = "url('" + backgroundImg[randomize(backgroundImg)] + "')";
-        letterWord.style.fontFamily = fontFamily[randomize(fontFamily)];
-        letterWord.style.fontWeight = fontWeight[randomize(fontWeight)];
-        letterWord.style.fontStyle = fontStyle[randomize(fontStyle)];
-        letterWord.style.fontVariant = fontVariant[randomize(fontVariant)];
-        letterWord.style.textDecoration = textDecoration[randomize(textDecoration)];
+            letterWord.style.backgroundColor = generateRandomColor();
+            letterWord.style.color = generateRandomColor();
+            letterWord.style.fontSize = Math.floor(Math.random() * (maxFontSize - minFontSize) + minFontSize) + 'px';
+            letterWord.style.backgroundImage = "url('img/" + randomize(backgroundImg) + "')";
+            letterWord.style.fontFamily = randomize(fontFamily);
+            letterWord.style.fontWeight = randomize(fontWeight);
+            letterWord.style.fontStyle = randomize(fontStyle);
+            letterWord.style.fontVariant = randomize(fontVariant);
+            letterWord.style.textDecoration = randomize(textDecoration);
+        }
+        wordCounter(splitedText)
     }
-    wordCounter(splitedText)
 }
 
 function generateRandomColor() {
-    var randomColor = '#' + (0x1000000 + Math.random() * 0xFFFFFF).toString(16).substr(1, 6);
-    return randomColor
+    return randomColor = '#' + (0x1000000 + Math.random() * 0xFFFFFF).toString(16).substr(1, 6);
 }
 
 function randomize(array) {
-    let randomFeature = Math.floor(Math.random() * array.length);
-    return randomFeature
+    return randomFeature = array[Math.floor(Math.random() * array.length)];
 }
 
 function clearLetter() {
