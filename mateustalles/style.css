@@ -79,6 +79,15 @@ h1 {
     display: none;
 }
 
+.word-counter {
+    position : absolute;
+    top: 0px;
+    left: 30px;
+    max-width: 60px;
+    font-style: italic;
+    font-size: 2em;
+}
+
 .btn-close {
     position: absolute;
     top: 0%;

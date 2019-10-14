@@ -22,6 +22,7 @@ function coringaRi() {
     stringArray.push(placeholder.toString().split(" "));
     randomSize();
     classMenu();
+    wordCounter();
 }
 coringaRi();
 
@@ -30,6 +31,7 @@ btnEnvia.addEventListener("click", function() {
     stringFormation();
     randomSize();
     classMenu();
+    wordCounter();
 });
 
 function stringFormation () {
@@ -136,3 +138,17 @@ function reset() {
         document.querySelector(".container-result").removeChild(word);
     };
 };
+
+function wordCounter() {
+    let wordCounter = document.querySelector(".word-counter");
+    let wordArray = document.querySelectorAll(".current-word");
+    let counter = 0;
+    for (let word of wordArray) {
+        if ( word.innerText == "" || word.innerText == " " ) {
+            wordCounter.innerHTML = counter + " palavras";
+        } else {
+            counter++;
+            wordCounter.innerHTML = counter+" palavras";
+        }
+    }
+}
