@@ -1,19 +1,19 @@
 window.onload = generateLetter;
 
 // Cria arrays para cada 'estilo'
-var backgroundImg = ['background1.png', 'background2.png', 'background3.png', 'background4.png', ''];
-var fontFamily = ['sans-serif', 'serif', 'monospace', 'cursive', 'fantasy'];
-var fontWeight = ['normal', 'bold', 'bolder'];
-var fontStyle = ['normal', 'italic', 'oblique', 'inherit', 'unset', 'initial'];
-var fontVariant = ['normal', 'small-caps'];
-var textDecoration = ['underline', 'line-through', 'none'];
+const backgroundImg = ['background1.png', 'background2.png', 'background3.png', 'background4.png', ''];
+const fontFamily = ['sans-serif', 'serif', 'monospace', 'cursive', 'fantasy'];
+const fontWeight = ['normal', 'bold', 'bolder'];
+const fontStyle = ['normal', 'italic', 'oblique', 'inherit', 'unset', 'initial'];
+const fontVariant = ['normal', 'small-caps'];
+const textDecoration = ['underline', 'line-through', 'none'];
 
 function generateLetter() {
-    let mysteryLetter = document.getElementById("mystery-letter");
+    const mysteryLetter = document.getElementById("mystery-letter");
     let inputText = document.getElementById('user-input').value;
     let splitedText = inputText.split(" ");
-    let maxFontSize = 70;
-    let minFontSize = 30;
+    const maxFontSize = 70;
+    const minFontSize = 30;
 
     clearLetter()
 
@@ -53,8 +53,7 @@ function randomize(array) {
 }
 
 function clearLetter() {
-    let mysteryLetter = document.getElementById("mystery-letter");
-    
+    const mysteryLetter = document.getElementById("mystery-letter"); 
     while (mysteryLetter.firstChild) {
         mysteryLetter.firstChild.remove();
     }
