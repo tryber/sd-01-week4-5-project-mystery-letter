@@ -87,7 +87,6 @@ function randomSize() {
             randomStyle();
     };
 };
-
 function classMenu() {
     let currentWords = document.querySelectorAll(".current-word");  
     divArray = Array.prototype.slice.call(document.querySelector('.container-result').children ); 
@@ -95,34 +94,38 @@ function classMenu() {
         word.addEventListener("click", function() { 
             divIndex = divArray.indexOf(this)
             let tempDiv = document.querySelector(".temp-div")
-            tempDiv.style.display = "inline-block";
+            tempDiv.style.display="inline-block";
+            tempDiv.style.top = this.getBoundingClientRect().top+"px";
+            tempDiv.style.left = this.getBoundingClientRect().left-100+"px";
             tempDiv.addEventListener ("mouseleave", function() {
                 let colorPallete = document.querySelector(".color-picker-sv")
                 if (document.body.contains(colorPallete)) {
-                    tempDiv.style.display = "inline-block";
+                    tempDiv.style.display="inline-block";
                 } else {
-                    tempDiv.style.display = "none";
+                    tempDiv.style.display="none";
                 }
             });
+        });
+    }
+
+    let styleDropdown = document.querySelector(".dropdown-style");
+    styleDropdown.addEventListener("change", function() {
+        currentWords[divIndex].className+=" "+this.value;
+    })
+
+    let fontSizeDropdown = document.querySelector(".dropdown-font-size")
+    fontSizeDropdown.addEventListener("change", function() {
+        currentWords[divIndex].style.fontSize=this.value+"em";
     });
-};
 
-let styleDropdown = document.querySelector(".dropdown-style");
-styleDropdown.addEventListener("change", function() {
-    currentWords[divIndex].className+=" "+this.value;
-})
 
-let fontSizeDropdown = document.querySelector(".dropdown-font-size")
-fontSizeDropdown.addEventListener("change", function() {
-    currentWords[divIndex].style.fontSize=this.value+"em";
-});
+    var picker = new CP(document.querySelector(".color-container"));
+    var target = document.querySelector(".color-container");
+    target.addEventListener("click", function() {
 
-var picker = new CP(document.querySelector(".color-container"));
-var target = document.querySelector(".color-container");
-target.addEventListener("click", function() {
-    picker.on("drag", function(color) {
-        target.value = '#' + color;
-        currentWords[divIndex].style.backgroundColor=target.value;
+        picker.on("drag", function(color) {
+            target.value = '#' + color;
+            currentWords[divIndex].style.backgroundColor=target.value;
         });
     });
 }

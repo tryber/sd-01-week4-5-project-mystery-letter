@@ -10,7 +10,7 @@ div {
 
 h1 {
     display: block;
-    margin: 0 auto;
+    margin: 25px auto 0px auto;
     text-align: center;
 }
 
@@ -57,7 +57,7 @@ h1 {
 
 .container-result {
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     width: 95%;
     height: 70%;
@@ -75,7 +75,7 @@ h1 {
     background-image: none;
     color: white;
     background-color: black;
-    position: relative;
+    position: absolute;
     display: none;
 }
 
@@ -149,3 +149,6 @@ h1 {
 
 .form {overflow: auto; width: 150px;}
 
+.input-letter-size {
+    width: 250px;
+}
