@@ -6,7 +6,7 @@ const fontFamily = ['sans-serif', 'serif', 'monospace', 'cursive', 'fantasy'];
 const fontWeight = ['normal', 'bold', 'bolder'];
 const fontStyle = ['normal', 'italic', 'oblique', 'inherit', 'unset', 'initial'];
 const fontVariant = ['normal', 'small-caps'];
-const textDecoration = ['underline', 'line-through', 'none'];
+const textDecoration = ['underline', 'line-through', 'none', 'none'];
 
 function generateLetter() {
     const mysteryLetter = document.getElementById("mystery-letter");
