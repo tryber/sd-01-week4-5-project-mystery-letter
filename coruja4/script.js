@@ -17,15 +17,15 @@ function criatorio(envia) {
     tags.insertAdjacentHTML('afterbegin', envia);
 }
 
-function removeAll() {
-    let pai = document.getElementById("recebe-frase-gerada");
-    while(pai.firstChild) {
-        pai.firstChild.remove();
+function mudarEstiloCarta() {
+    let novaCarta = document.getElementById("recebe-frase-gerada");
+    while(novaCarta.firstChild) {
+        novaCarta.firstChild.remove();
     }
 }
 
 function ativarCarta() {
-    removeAll();
+    mudarEstiloCarta();
     palavras = frase.value.split(" ");
     for (const armazena of palavras) {
         criatorio(armazena);
