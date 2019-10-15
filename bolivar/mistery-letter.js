@@ -67,15 +67,11 @@ function setImage(){
 }
 
 function countWords(array){
-    var characters = new String()
-    for (i = 0; i < array.length; i++){
-        characters += array[i]
-    }
-    if (characters.length == 1){
-        document.getElementById("count-words").innerHTML = characters.length + " word"
+    if (array.length == 1){
+        document.getElementById("count-words").innerHTML = array.length + " word"
     }
     else{
-        document.getElementById("count-words").innerHTML = characters.length + " words"
+        document.getElementById("count-words").innerHTML = array.length + " words"
     }
 }
 
@@ -104,7 +100,8 @@ function click(){
 }
 
 function initialText(){
-    document.getElementById("main-input").value = "Boys only want love if it's torture"
+    document.getElementById("main-input").value = "Boys only want love if it's torture";
+    tableSize();
 }
 
 function bodyCollor(){
