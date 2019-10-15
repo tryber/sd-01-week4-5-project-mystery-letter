@@ -35,32 +35,25 @@ function determinarEstilo() {
         let wordSize = Math.floor((Math.random(1)+2) * 50) + "px";
         let backgroundColorArray = "rgb(" + r + ", " + g + ", " + b + ")";
         let imgBg = "url('imagesAndMusic/" + Math.floor(Math.random() * i) + ".png')"
-        console.log(imgBg)
+        listaSpan[i].style.color = fontColor;
+        listaSpan[i].style.fontSize = wordSize;
         if (i % 2 == 0) {
             listaSpan[i].style.backgroundImage = imgBg;
-            listaSpan[i].style.color = fontColor;
-            listaSpan[i].style.fontSize = wordSize;
         } else {
             listaSpan[i].style.backgroundColor = backgroundColorArray;
-            listaSpan[i].style.color = fontColor;
-            listaSpan[i].style.fontSize = wordSize;
         }
         }
 }
 
-
 function apagaTags() {
-    let qtdSpan = document.getElementsByClassName("receberpalavras");
+    let qtdSpan = document.querySelector(".receberpalavras");
     let qtdTagsSpan = document.getElementsByTagName("span");
     let tamanhoSpan = qtdTagsSpan.length
-    let rmPrimeiroFilho = qtdSpan.firstElementChild()
     for (let i = 0; i < tamanhoSpan ; i++) {
-        qtdSpan[0].removeChild(rmPrimeiroFilho)
+        qtdSpan.removeChild(rmPrimeiroFilho[0])
     }
 }
 
+
+
 botaoFunc()
-
-
-
-
