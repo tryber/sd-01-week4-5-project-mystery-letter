@@ -4,7 +4,6 @@ btn.addEventListener("click", function () {
 }) 
 function createAllElements(frase){
     for (let i = 0; i < frase.length; i++){
-        console.log("oi");
         createDivWord(frase[i]);
     }
 }
@@ -20,6 +19,9 @@ function textSplit(text1){
     text1 = document.getElementById('typeText').value;
     textSplit1 = text1.split(" ");
     return textSplit1;
+}
+function put_attribute_imgbackground_on_element(element){
+    element.style.backgroundImage="url('image/"+randomNumber(4)+".png')";
 }
 function put_attribute_imgbackground_on_element(element){
     element.style.backgroundImage="url('image/"+randomNumber(4)+".png')";
